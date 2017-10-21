@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    .link {
+      text-decoration: underline;
+      cursor: pointer;
+      color: blue;
+    }
+      #results{
+        max-width: 60%;
+        border: 1px dashed black;
+        padding: 5px;
+        margin: 5px;
+        margin-left: 20px;
+      }
+
+  </style>
+</head>
+<body>
+<header>
+      allo
+      <% if user_signed_in? %>
+    <%= current_user.prenom %>
+<a href="/users/sign_out" data-method="delete" rel="nofollow">signout</a>
+
+    <button id="btFriends" type="button">My friends</button>
+    <button id="btStats" type="button">My stats</button>
+
+
+    <% else %>
+    <a href="/users/sign_in">sign in</a>
+<% end %>
+</header>
+<div style="float:left">
+<div id ="latest"><h3>Latest games</h3></div>
+<div id ="popular"><h3>Popular games</h3></div>
+<div id ="currentlyPlayed"><h3>Currently played</h3></div>
+
+
+</div>
+
+<div id ="results" style="float:left;"></div>
+
+
+
+
+
+
+<script>
+  var auth = "<%= form_authenticity_token %>"
+  var signedIn = <%= user_signed_in? %>
+  var user = {
+      <%if user_signed_in? %><%= "id : #{current_user.id}" %><%end%>
+  }
+
+  $(document).ready(function(){
+      //get all games
+      $.ajax({
+          method:"get",
+          url: "/getData",
+          success: function(data){
+              data.latest.forEach(function(g){
+                  $('#latest').append('<span class="link" onclick="fetchGame('+g.id+')">' + g.title + "</span><br>");
+              })
+              data.popular.forEach(function(g){
+                  $('#popular').append('<span class="link" onclick="fetchGame('+g.id+')">' + g.title + "</span><br>");
+              });
+              data.current.forEach(function(g){
+                  $('#currentlyPlayed').append('<span class="link" onclick="fetchGame('+g.id+')">' + g.title + "</span><br>");
+              });
+          }
+      })
+  });
+
+
+
+
+
+  $('#btStats').click(function(){
+      $.ajax({
+          method: "get",
+          url: "/stats/getMyStats",
+          success: getStatsSuccess
+      });
+  });
+
+
+    $('#btFriends').click(function(){
+        $.ajax({
+            method: "get",
+            url: "/friends/getMyFriends",
+            success: getFriendsSuccess
+        });
+    });
+
+function getFriendsSuccess(d)
+{
+    var res = $("#results").text("");
+    res.append('<input id="email" type="email" name="email" placeholder="Friend\'s  email" />' +
+        '<button onclick="addFriend()">Ajouter</button>');
+
+    res.append("<h3>Friends</h3>");
+   d.AcceptedFriends.forEach(function(f){
+        res.append(f.prenom + ' ' + f.nom);
+        res.append($('<button type="button" onclick="deleteFriend(' + f.rel_id +')">X</button><br>'))
+   });
+    res.append("<h3>Requetes envoyées</h3>");
+    d.PendingSendRequests.forEach(function(f){
+        res.append(f.prenom + ' ' + f.nom + '<br>');
+    });
+    res.append("<h3>Requetes Recues</h3>");
+    d.PendingRecRequests.forEach(function(f){
+        res.append(f.prenom + ' ' + f.nom);
+        res.append($('<button type="button" onclick="answerRequest(' + f.rel_id +',1)">accept</button>'));
+        res.append($('<button type="button" onclick="answerRequest(' + f.rel_id +',0)">reject</button><br>'))
+    });
+}
+
+function getStatsSuccess(data){
+    var res = $('#results');
+    res.text("");
+    res.append('<h3>Stats</h3>Game won/lost<br><ul>');
+    data.games.forEach(function(g){
+        res.append('<li>' + g.title + ': ' + g.won + '/' + (g.total-g.won)+'</li>');
+    });
+    res.append('</ul>');
+}
+
+
+function answerRequest(id, answer){
+    $.ajax({
+        method: "POST",
+        url: "/friends/answerRequest",
+        data: {
+            authenticity_token: auth,
+            id: id,
+            answer: answer,
+            success: function(){window.location.reload()}
+        }
+    });
+}
+
+  function deleteFriend(id) {
+      $.ajax({
+          method: "DELETE",
+          url: "/friends/delete",
+          data: {
+              authenticity_token: auth,
+              id: id
+          },
+          success: function(){window.location.reload()}
+      });
+  }
+
+  function addFriend(e){
+
+    var email = $('#email').val();
+    console.log(email)
+    $.ajax({
+        method:"post",
+        url: '/friends/newFriendRequest',
+        data:{
+            authenticity_token: auth,
+            email: email
+        },
+        success: function(d){console.log(d);window.location.reload();},
+        error: function(d){console.log(d);}
+    });
+
+  }
+
+  function fetchGame(id){
+      $.ajax({
+          method:"get",
+          url: '/games/' + id,
+          success: function(d){
+              console.log(d);
+              var res = $('#results');
+              res.text("");
+              res.append(JSON.stringify(d));
+
+              var but;
+              if (signedIn)
+                  but = '<br><button onclick="playGame('+ id +')" type="button">Play</button>';
+              else
+                  but = '<br><a href="/users/sign_in"><button type="button">Login to play</button></a>';
+
+              res.append(but);
+          }
+      });
+  }
+
+  function playGame(id)
+  {
+      $.ajax({
+          method: "GET",
+          url: "games/"+id+"/play",
+          success:function(d){
+              console.log(d);
+              var res = $('#results');
+              res.text("");
+
+              res.append(d.state + '<br>' + JSON.stringify(d.data));
+              if(d.data.status != 'waiting')
+                res.append('<button type="button" onclick="winGame('+ d.data.id +','+ user.id +')">win</button>')
+
+              },
+          error: function(d){console.log(d);}
+      });
+
+  }
+
+  function winGame(joust_id){
+      $.ajax({
+          method: 'POST',
+          url: 'games/'+joust_id+'/win',
+          data: {
+              authenticity_token: auth,
+              joust_id: joust_id
+          },
+          success: function(d){
+              console.log(d);
+              window.location.reload();
+          }
+      })
+  }
+
+</script>
+
+</body>
+</html>
