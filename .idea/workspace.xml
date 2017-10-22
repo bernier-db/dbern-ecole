@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced4afbd-9b57-4a7f-a35b-082cb757d779" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavLinks.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Sitename.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Slogan.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/routes.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/home/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/Index.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/HelloWorld/components/App.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/HelloWorld/components/HelloWorld.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/Bangers.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/Bangers.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
@@ -33,7 +15,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/jquery-3.2.1.min.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/jquery-3.2.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/main.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/friendship_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/friendship_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/game_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/game_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/main_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/main_controller.rb" />
@@ -44,6 +28,25 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users/registrations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users/registrations_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users/unlocks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users/unlocks_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavLinks.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavLinks.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Sitename.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Sitename.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Slogan.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Slogan.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/routes.jsx" afterPath="$PROJECT_DIR$/app/javascript/bundles/App/components/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/packs/Index.jsx" afterPath="$PROJECT_DIR$/app/javascript/packs/Index.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/javascript/packs/hello-world-bundle.js" afterPath="$PROJECT_DIR$/app/javascript/packs/hello-world-bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/application_record.rb" afterPath="$PROJECT_DIR$/app/models/application_record.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/game.rb" afterPath="$PROJECT_DIR$/app/models/game.rb" />
@@ -51,6 +54,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/relationship.rb" afterPath="$PROJECT_DIR$/app/models/relationship.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/hello_world/index.html.erb" afterPath="$PROJECT_DIR$/app/views/hello_world/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html" afterPath="$PROJECT_DIR$/app/views/home/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/confirmations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/users/confirmations/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/mailer/confirmation_instructions.html.erb" afterPath="$PROJECT_DIR$/app/views/users/mailer/confirmation_instructions.html.erb" />
@@ -87,7 +91,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -102,17 +105,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="assets.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+              <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -136,8 +129,8 @@
       <file leaf-file-name="hello-world-bundle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/javascript/packs/hello-world-bundle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+            <state relative-caret-position="102">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,44 +140,64 @@
         <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1508640524690" expanded="true" signature="1070:6067" ph="..." />
+                <marker date="1508640524690" expanded="true" signature="1083:6058" ph="..." />
+                <marker date="1508640524690" expanded="true" signature="1184:1258" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="1194:1252" ph="if ... end" />
+                <marker date="1508640524690" expanded="true" signature="1290:1999" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="1327:1994" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="1413:1986" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="1460:1595" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="1643:1779" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="2039:2165" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="2054:2159" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="2206:2350" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="2223:2342" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="2384:3326" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="2657:2809" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="2903:2963" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="3054:3322" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="3358:3617" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="3654:3911" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="3667:3907" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="3746:3901" ph="{&quot;id&quot;: id...}" />
+                <marker date="1508640524690" expanded="true" signature="3941:4181" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="3956:4175" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="4036:4110" ph="{&quot;id&quot;: id...}" />
+                <marker date="1508640524690" expanded="true" signature="4206:4562" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="4278:4555" ph="{&quot;method&quot;: &quot;post&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="4358:4432" ph="{&quot;authenticity_token&quot;: auth...}" />
+                <marker date="1508640524690" expanded="true" signature="4588:5163" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="4603:5157" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="4690:5149" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="5191:5704" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="5206:5697" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+                <marker date="1508640524690" expanded="true" signature="5298:5642" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="5734:6048" ph="{...}" />
+                <marker date="1508640524690" expanded="true" signature="5749:6043" ph="{&quot;method&quot;: 'POST'...}" />
+                <marker date="1508640524690" expanded="true" signature="5834:5920" ph="{&quot;authenticity_token&quot;: auth...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavBar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#158#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="90" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="90" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,6 +257,7 @@
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -277,35 +291,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="testApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testApp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testApp" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testApp" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBern" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
+      <pane id="RailsProjectView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,34 +437,35 @@
       <option name="presentableId" value="Default" />
       <updated>1508621325885</updated>
       <workItem from="1508621328158" duration="14527000" />
+      <workItem from="1508641200401" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14527000" />
+    <option name="totallyTimeSpent" value="14560000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3115" y="-207" width="1315" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33410317" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21555042" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.49707174" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33376962" sideWeight="0.5051395" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33246073" sideWeight="0.4948605" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.49707174" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33246073" sideWeight="0.4948605" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,19 +479,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/users/unlocks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -499,7 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -507,23 +497,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="32" column="78" lean-forward="false" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/packs/hello_react-40bf44b1779ba7388fbf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/packs/hello_react-40bf44b1779ba7388fbf.js" />
     <entry file="file://$PROJECT_DIR$/app/views/users/mailer/email_changed.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -531,7 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -547,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="46" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -555,9 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -565,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,261 +548,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/packs/application-944a8c5eb565d2f02aa4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/packs/hello-world-bundle-8cf0ee58e98fefe857b2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8024">
-          <caret line="263" column="0" lean-forward="false" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/packs/application-944a8c5eb565d2f02aa4.js" />
+    <entry file="file://$PROJECT_DIR$/public/packs/hello-world-bundle-8cf0ee58e98fefe857b2.js" />
     <entry file="file://$PROJECT_DIR$/bin/rails">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.js" />
+    <entry file="file://$PROJECT_DIR$/app/views/home/routes.js" />
     <entry file="file://$PROJECT_DIR$/app/views/layouts/hello_world.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Slogan.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Sitename.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Slogan.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/Sitename.jsx" />
     <entry file="file://$PROJECT_DIR$/app/javascript/packs/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/routes.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/packs/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/routes.jsx" />
+    <entry file="file://$PROJECT_DIR$/public/packs/manifest.json" />
     <entry file="file://$PROJECT_DIR$/app/javascript/packs/hello_react.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#228#253#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/HelloWorld.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/HelloWorld.jsx" />
     <entry file="file://$PROJECT_DIR$/app/javascript/packs/hello-world-bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="102">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html" />
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -836,93 +617,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/packs/Index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/packs/Index.jsx" />
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+          <caret line="14" column="68" lean-forward="false" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/fonts.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" lean-forward="true" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/fonts.css.scss" />
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css" />
     <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1508640524690" expanded="true" signature="1070:6067" ph="..." />
+            <marker date="1508640524690" expanded="true" signature="1083:6058" ph="..." />
+            <marker date="1508640524690" expanded="true" signature="1184:1258" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="1194:1252" ph="if ... end" />
+            <marker date="1508640524690" expanded="true" signature="1290:1999" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="1327:1994" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="1413:1986" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="1460:1595" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="1643:1779" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="2039:2165" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="2054:2159" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="2206:2350" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="2223:2342" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="2384:3326" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="2657:2809" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="2903:2963" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="3054:3322" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="3358:3617" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="3654:3911" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="3667:3907" ph="{&quot;method&quot;: &quot;POST&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="3746:3901" ph="{&quot;id&quot;: id...}" />
+            <marker date="1508640524690" expanded="true" signature="3941:4181" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="3956:4175" ph="{&quot;method&quot;: &quot;DELETE&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="4036:4110" ph="{&quot;id&quot;: id...}" />
+            <marker date="1508640524690" expanded="true" signature="4206:4562" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="4278:4555" ph="{&quot;method&quot;: &quot;post&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="4358:4432" ph="{&quot;authenticity_token&quot;: auth...}" />
+            <marker date="1508640524690" expanded="true" signature="4588:5163" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="4603:5157" ph="{&quot;method&quot;: &quot;get&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="4690:5149" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="5191:5704" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="5206:5697" ph="{&quot;method&quot;: &quot;GET&quot;...}" />
+            <marker date="1508640524690" expanded="true" signature="5298:5642" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="5734:6048" ph="{...}" />
+            <marker date="1508640524690" expanded="true" signature="5749:6043" ph="{&quot;method&quot;: 'POST'...}" />
+            <marker date="1508640524690" expanded="true" signature="5834:5920" ph="{&quot;authenticity_token&quot;: auth...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavLinks.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#158#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="90" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavLinks.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx" />
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" />
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
