@@ -305,6 +305,14 @@ header div {
 	-o-transition: all 100ms ease-in-out;
 	transition: all 100ms ease-in-out;
 }
+a.menuItem.ifLogged {
+    background-color: #444444;
+}
+.separator {
+    width: 100%;
+    border-bottom: solid 1px rgb(40,40,40);
+}
+
 
 @media screen and (max-width: 900px) {
 	.headerProfile {
