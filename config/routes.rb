@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/getData', to: 'main#getData'
+  get '/home', to: 'main#index'
+  get '/profile', to: 'main#index'
 
 #friendships
+  get '/friends', to: 'main#index'
   get '/friends/getMyFriends', to: 'friendship#FetchFriends'
   post '/friends/newFriendRequest', to: 'friendship#newFriendRequest'
   post '/friends/answerRequest', to: 'friendship#answerRequest'
@@ -22,6 +25,7 @@ Rails.application.routes.draw do
 
 
   #game
+  get '/games', to: 'main#index'
   get '/games/:id', to: 'game#get'
   get '/games/:id/play', to: 'game#play'
   post '/games/:joust_id/win', to: 'game#win'

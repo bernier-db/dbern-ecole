@@ -1,0 +1,352 @@
+@font-face {
+    font-family: "Bangers";
+    src: url('/assets/Bangers.ttf') format("truetype");
+}
+body {
+	background-color: #F5F5F5;
+	margin: 0;
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+header div {
+	flex: auto;
+}
+#sideMenuContainer{
+	display:none;
+	flex: 0 0 40px;
+	padding: 3px;
+	margin-right: auto;
+	justify-content: center;
+}
+.menuIcon {
+	display:flex;
+	align-self: stretch;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 15px;
+	cursor: pointer;
+
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.menuIcon:hover, .menuIcon.active {
+	background-color: #222222;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.menuIcon svg path {
+	fill: #dddddd;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.menuIcon:hover svg path, .menuIcon.active svg path {
+	fill: #888888;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.logo {
+	display: flex;
+	margin-right: 10px;
+	top: -10px;
+	flex-flow: row wrap;
+	align-items: baseline;
+}
+
+.SiteNameLogo {
+	font-family: "Bangers", cursive;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	color: #aB0000;
+	font-size: 80px;
+	margin: 0 10px 0 60px;
+	text-decoration: none;
+}
+
+.navLinks {
+	align-self: stretch;
+	display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+	.navLinks {
+		display: none;
+	}
+
+	header {
+		justify-content: space-between;
+	}
+
+	#sideMenuContainer {
+		display:flex;
+		margin-right: auto;
+	}
+
+
+}
+
+.navLinks a {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-family: Arial;
+	text-decoration: none;
+	padding: 0 30px;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.navLinks a:hover, .headerProfile:hover, .headerProfile.active {
+
+	background-color: #222222;
+	color: grey;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.activeNavLink {
+	background-color: #2a2a2a;
+	color: grey;
+}
+
+.headerSearch {
+	position: relative;
+}
+
+.headerSearch {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 10px;
+}
+
+.headerSearch input {
+	height: 24px;
+	box-sizing: border-box;
+	border: none;
+	padding-left: 5px;
+	border-radius: 5px 0 0 5px;
+	font-family: Arial;
+}
+
+.headerSearch button {
+	background-color: white;
+	display: inline;
+	border: none;
+	box-sizing: border-box;
+	border-radius: 0 5px 5px 0;
+}
+
+.headerProfile {
+	z-index: 2;
+	flex: 0 0 200px;
+	text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.headerProfile > div > svg {
+
+	width: 40px;
+	height: 40px;
+
+}
+
+.headerProfile > div > svg > path {
+	fill: white;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.headerProfile:hover svg path, .headerProfile.active svg path {
+	fill: grey;
+	-webkit-transition: all 400ms ease-in-out;
+	-moz-transition: all 400ms ease-in-out;
+	-ms-transition: all 400ms ease-in-out;
+	-o-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+}
+
+.headerProfile span {
+	margin: 0 20px;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+.profileButton{
+	display:flex;
+	align-items: center;
+	height:100%;
+	padding-left: 20px;
+	width:100%;
+}
+.sideBar {
+	top: 85px;
+	left: -250px;
+	position: absolute;
+	width: 200px;
+	height: 100vh;
+	-webkit-box-shadow: 5px 0px 6px grey;
+	-moz-box-shadow: 5px 0px 6px grey;
+	box-shadow: 5px 0px 4px grey;
+
+	-webkit-transition: left 500ms;
+	-moz-transition: left 500ms;
+	-ms-transition: left 500ms;
+	-o-transition: left 500ms;
+	transition: left 500ms;
+	background-color: rgb(51, 51, 51);
+}
+
+.sideBar.active {
+	left: 0;
+	-webkit-transition: left 500ms;
+	-moz-transition: left 500ms;
+	-ms-transition: left 500ms;
+	-o-transition: left 500ms;
+	transition: left 500ms;
+}
+
+.sideBar a {
+	display:block;
+
+}
+.profileMenu {
+	top: 85px;
+	position: absolute;
+	width: 200px;
+	visibility: hidden;
+	opacity: 0;
+	right: 0;
+	background-color: #333333;
+	color: white;
+	box-shadow: -2px 3px 25px grey;
+	-webkit-transition: opacity 400ms, visibility 400ms;
+	-moz-transition: opacity 400ms, visibility 400ms;
+	-ms-transition: opacity 400ms, visibility 400ms;
+	-o-transition: opacity 400ms, visibility 400ms;
+	transition: opacity 400ms, visibility 400ms;
+
+}
+
+.profileMenu.active {
+	opacity: 1;
+	visibility: visible;
+	top: 85px;
+	-webkit-transition: opacity 400ms, visibility 400ms;
+	-moz-transition: opacity 400ms, visibility 400ms;
+	-ms-transition: opacity 400ms, visibility 400ms;
+	-o-transition: opacity 400ms, visibility 400ms;
+	transition: opacity 400ms, visibility 400ms;
+}
+
+.menuItem {
+	padding: 10px 20px;
+	color: white;
+	display: block;
+	text-align: left;
+	font-weight: 400;
+	text-decoration: none;
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+.menuItem:hover {
+	cursor: pointer;
+	background-color: #222222;
+	color: grey;
+
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-ms-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+	.headerProfile {
+		display: none;
+	}
+
+	header {
+		justify-content: flex-start;
+	}
+
+	#sideMenuContainer{
+		margin:0;
+	}
+}
+@media screen and (max-width: 650px){
+
+	.logo {
+		margin: 0;
+	}
+	.logo .SiteNameLogo {
+		margin-left: 0;
+	}
+}
+
+.breadcrumb {
+	background-color: white;
+	box-shadow: 2px 2px 2px grey;
+	padding: 3px 0;
+	padding-left: 60px;
+	margin-bottom: 10px;
+	color: #757575;
+}
+
+.link {
+	color: #2f76b4;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+.contentPage {
+	padding: 0 60px;
+}
