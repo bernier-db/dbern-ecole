@@ -294,7 +294,7 @@ header div {
 	transition: all 100ms ease-in-out;
 }
 
-.menuItem:hover {
+.menuItem:hover, menuItem.activeSideLink:hover {
 	cursor: pointer;
 	background-color: #222222;
 	color: grey;
@@ -307,6 +307,14 @@ header div {
 }
 a.menuItem.ifLogged {
     background-color: #444444;
+}
+a.menuItem.activeSideLink {
+    border-left: 8px solid #222222;
+    padding-left: 35px;
+}
+a.menuItem.activeSideLink:hover {
+    border-left: 8px solid grey;
+    background-color: #222222;
 }
 .separator {
     width: 100%;

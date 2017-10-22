@@ -10,7 +10,6 @@ class ProfilePage extends React.Component {
 }
 
 ProfilePage.propTypes = {
-    myProp: PropTypes.string.isRequired
 };
 
 export default ProfilePage;

@@ -9,7 +9,6 @@ class FriendsPage extends React.Component {
     }
 }
 FriendsPage.propTypes = {
-    myProp: PropTypes.string.isRequired
 };
 
 export default FriendsPage;
