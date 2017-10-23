@@ -22,7 +22,7 @@ const SideBar = (props) => {
 				<div className="separator"></div>
 				<div className="menuItem sideLog" >Log out</div>
 			</div>}
-			{!props.isLogged && <div className="menuItem" >Register/Login</div>}
+			{!props.isLogged && <Link className="menuItem" to="sign_in" activeClassName="activeSideLink">Register/Login</Link>}
 
 		</div>
 	);

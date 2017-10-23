@@ -8,12 +8,16 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  #Beacause of React-router ###########
   get '/getData', to: 'main#getData'
   get '/home', to: 'main#index'
   get '/profile', to: 'main#index'
+  get '/sign_in', to: 'main#index'
+  get '/friends', to: 'main#index'
+  #####################################
 
 #friendships
-  get '/friends', to: 'main#index'
+
   get '/friends/getMyFriends', to: 'friendship#FetchFriends'
   post '/friends/newFriendRequest', to: 'friendship#newFriendRequest'
   post '/friends/answerRequest', to: 'friendship#answerRequest'

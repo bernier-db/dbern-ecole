@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import ProfileIcon from "./ProfileIcon";
 import ProfileMenu from "./ProfileMenu";
+import {Link} from 'react-router';
 
 class HeaderProfile extends React.Component {
     constructor(props) {
@@ -36,7 +37,20 @@ class HeaderProfile extends React.Component {
     }
 
     render() {
-        let text = this.props.isLogged ? this.props.userName : "Login/Register";
+        let text = this.props.isLogged ?
+            <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : () => {
+            }}>
+                <ProfileIcon/>
+                <div className="headerText">this.props.userName</div>
+            </div>
+            :
+            <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : () => {
+            }}>
+                <ProfileIcon/>
+                <Link to="sign_in">
+                    <div className="headerText">Login/Register</div>
+                </Link>
+            </div>;
         let classNames = "headerProfile";
 
         if (this.props.activeClass) {
@@ -49,13 +63,7 @@ class HeaderProfile extends React.Component {
                 {this.props.isLogged &&
                 <ProfileMenu activeClass={this.props.activeClass} toggleActive={this.props.toggleActive}/>
                 }
-                <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : ()=>{alert('log');}}>
-                    <ProfileIcon/>
-                    <span className="headerText">
-					{text}
-				</span>
-                </div>
-
+                {text}
             </div>
         );
     }

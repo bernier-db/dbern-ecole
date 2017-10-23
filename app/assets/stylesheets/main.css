@@ -179,6 +179,7 @@ header div {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    position:relative;
     -webkit-transition: all 400ms ease-in-out;
     -moz-transition: all 400ms ease-in-out;
     -ms-transition: all 400ms ease-in-out;
@@ -190,7 +191,7 @@ header div {
 
     width: 40px;
     height: 40px;
-
+    position:absolute;
 }
 
 .headerProfile > div > svg > path {
@@ -218,7 +219,14 @@ header div {
     -ms-user-select: none;
     -webkit-user-select: none;
 }
-
+.headerProfile a {
+    color:white;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+}
 .profileButton {
     display: flex;
     align-items: center;
@@ -500,4 +508,56 @@ a.menuItem.activeSideLink:hover {
     .gameList{
         display:none;
     }
+}
+
+.loginPage {
+    position: absolute;
+    flex: 0 0 100%;
+    width: 100%;
+    font-family: 'Arial';
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    height: 100%;
+}
+.loginPage form {
+    text-align: center;
+    max-width: 250px;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.loginPage form h3 {
+    margin: 0;
+    font-family: 'Arial';
+}
+.loginPage form.green {
+    background-color: #ddf5dd;
+}
+.loginPage form.green input[type="submit"] {
+    border: none;
+    background-color: #8d8;
+    cursor: pointer;
+}
+.loginPage form.green input[type="submit"]:hover {
+    background-color: #39c639;
+}
+.loginPage form.blue {
+    background-color: #ddddf5;
+}
+.loginPage form.blue input[type="submit"] {
+    border: none;
+    background-color: #88d;
+    cursor: pointer;
+}
+.loginPage form.blue input[type="submit"]:hover {
+    background-color: #3939c6;
+}
+.loginPage form input:not([type="checkbox"]) {
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 3px;
+    text-align: center;
+    display: block;
+    margin: 8px;
 }
