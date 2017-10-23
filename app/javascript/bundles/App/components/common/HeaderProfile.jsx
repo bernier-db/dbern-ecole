@@ -41,7 +41,7 @@ class HeaderProfile extends React.Component {
             <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : () => {
             }}>
                 <ProfileIcon/>
-                <div className="headerText">this.props.userName</div>
+                <div className="headerText">{this.props.userName}</div>
             </div>
             :
             <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : () => {
@@ -61,7 +61,7 @@ class HeaderProfile extends React.Component {
 
             <div ref={this.setWrapperRef} className={classNames}>
                 {this.props.isLogged &&
-                <ProfileMenu activeClass={this.props.activeClass} toggleActive={this.props.toggleActive}/>
+                <ProfileMenu logOut={this.props.logOut} activeClass={this.props.activeClass} toggleActive={this.props.toggleActive}/>
                 }
                 {text}
             </div>
@@ -73,7 +73,8 @@ HeaderProfile.propTypes = {
     isLogged: PropTypes.bool.isRequired,
     userName: PropTypes.string.isRequired,
     toggleActive: PropTypes.func.isRequired,
-    activeClass: PropTypes.bool.isRequired
+    activeClass: PropTypes.bool.isRequired,
+    logOut: PropTypes.func.isRequired
 
 };
 

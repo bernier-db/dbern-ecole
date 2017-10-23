@@ -6,9 +6,17 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  post '/users/sign_in', to: 'users/sessions#create'
+  delete '/users/sign_out', to: 'users/sessions#destroy'
+
+    get '/auth/is_signed_in', to: 'main#is_signed_in'
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  #Beacause of React-router ###########
+  #Because of React-router ###########
   get '/getData', to: 'main#getData'
   get '/home', to: 'main#index'
   get '/profile', to: 'main#index'
@@ -17,7 +25,6 @@ Rails.application.routes.draw do
   #####################################
 
 #friendships
-
   get '/friends/getMyFriends', to: 'friendship#FetchFriends'
   post '/friends/newFriendRequest', to: 'friendship#newFriendRequest'
   post '/friends/answerRequest', to: 'friendship#answerRequest'

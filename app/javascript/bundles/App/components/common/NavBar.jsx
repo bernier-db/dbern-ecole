@@ -6,7 +6,7 @@ import NavLinks from "./NavLinks";
 import HeaderProfile from "./HeaderProfile";
 
 import MenuIcon from "./MenuIcon";
-import SideBar from "./SideBar";
+import {Redirect} from 'react-router'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -23,6 +23,7 @@ class NavBar extends React.Component {
         };
         this.toggleActive = this.toggleActive.bind(this);
         this.toggleSideBarActive = this.toggleSideBarActive.bind(this);
+        this.logOut = this.logOut.bind(this);
     }
 
     toggleActive() {
@@ -33,16 +34,36 @@ class NavBar extends React.Component {
         this.setState({sideBarActive: !this.state.sideBarActive});
     }
 
+    logOut(){
+        $.ajax({
+            method: "DELETE",
+            url: "/users/sign_out",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', auth)
+            },
+            data:{
+                authenticity_token: auth
+            },
+            success: function(){
+                this.props.logOut();
+                window.location.href="/";
+            }
+        });
+    }
+
+
 
     render() {
-
-
         return (
             <header style={this.state.styles}>
 
 
-                <MenuIcon isLogged={this.props.isLogged} fill={"#222222"}
-                          toggleActive={this.toggleSideBarActive} activeClass={this.state.sideBarActive}/>
+                <MenuIcon isLogged={this.props.isLogged}
+                          fill={"#222222"}
+                          toggleActive={this.toggleSideBarActive}
+                          activeClass={this.state.sideBarActive}
+                          logOut ={this.props.logOut}
+                />
 
                 <Logo userName={this.props.userName}/>
                 <NavLinks/>{/*
@@ -51,6 +72,8 @@ class NavBar extends React.Component {
                                activeClass={this.state.profileActive}
                                toggleActive={this.toggleActive}
                                 isLogged={this.props.isLogged}
+                               logOut={this.props.logOut}
+
                 />
 
 
@@ -61,7 +84,8 @@ class NavBar extends React.Component {
 
 NavBar.propTypes = {
     userName: PropTypes.string.isRequired,
-    isLogged: PropTypes.bool.isRequired
+    isLogged: PropTypes.bool.isRequired,
+    logOut: PropTypes.func.isRequired
 };
 
 export default NavBar;

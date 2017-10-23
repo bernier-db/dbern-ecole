@@ -1,7 +1,7 @@
 class MainController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
-
   render 'home/index.html.erb'
   end
 
@@ -11,4 +11,16 @@ class MainController < ApplicationController
     @current = Game.currentlyPlayed(5)
     render :json => {latest: @latest, popular: @popular, current: @current}
   end
+
+  def is_signed_in
+    if user_signed_in?
+    then
+      render :json => {"signed_in" => true, "user" => current_user}
+    else
+      render :json => {"signed_in" => false}
+    end
+
+  end
+
+
 end

@@ -4,6 +4,24 @@ import PropTypes from 'prop-types'
 class SigninPage extends React.Component {
     constructor(props) {
         super(props);
+        this.login = this.login.bind(this);
+        this.register = this.register.bind(this);
+    }
+
+    login(e){
+        e.preventDefault();
+        $.ajax({
+            method: 'post',
+            url: 'users/sign_in',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', auth)
+            },
+            success: (res)=>{}
+        });
+    }
+
+    register(e){
+        e.preventDefault();
     }
 
     render() {

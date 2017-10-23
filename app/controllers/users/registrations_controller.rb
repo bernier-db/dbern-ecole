@@ -2,51 +2,30 @@ class Users::RegistrationsController < Devise::RegistrationsController
    before_action :configure_sign_up_params, only: [:create]
    before_action :configure_account_update_params, only: [:update]
 
-  #  GET '/users/sign_up'
-  def new
-     super
+   def create
+     build_resource
+    byebug
+     if resource.save
+       if resource.active_for_authentication?
+         set_flash_message :notice, :signed_up if is_navigational_format?
+         sign_up(resource_name, resource)
+         return render :json => {:success => true, :user => current_user}
+       else
+         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
+         expire_session_data_after_sign_in!
+         return render :json => {:success => true, :user => current_user}
+       end
+     else
+       clean_up_passwords resource
+       return render :json => {:success => false}
+     end
    end
 
-
-  #  POST '/users'
-  #  def create
-  #    u = params[:user]
-  #    passwd = User.new(password: u[:password]).encrypted_password
-  #    user = User.new()
-  #    user.nom = u[:nom]
-  #    user.prenom = u[:prenom]
-  #    user.email= u[:email]
-  #    user.password = u[:password]
-  #    user.encrypted_password = passwd
-  #    user.save
-  #
-  #    super
-  #  end
-
-  #  GET '/users/edit'
-  #  def edit
-  #    super
-  #  end
-  #
-  #  PUT '/users'
-  #  def update
-  #    super
-  #  end
-  #
-  #  DELETE '/users'
-  #  def destroy
-  #    super
-  #  end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
-
+   # Signs in a user on sign up. You can overwrite this method in your own
+   # RegistrationsController.
+   def sign_up(resource_name, resource)
+     sign_in(resource_name, resource)
+   end
    private
 
   # If you have extra params to permit, append them to the sanitizer.
