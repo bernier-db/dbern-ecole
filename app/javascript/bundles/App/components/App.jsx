@@ -12,7 +12,7 @@ class App extends React.Component {
             user: {
                 id: null,
                 nom: null,
-                prenom: 'Martin',
+                prenom: null,
                 email: null
             }
         }
@@ -20,11 +20,13 @@ class App extends React.Component {
 
 
     render() {
+        console.log(this.props.routes);
+        let route = this.props.routes[this.props.routes.length - 1].path == undefined ? "" : this.props.routes[this.props.routes.length - 1].path
         return (
             <div>
-                <NavBar className="menuIcon" userName={this.state.user.prenom}/>
-                <Breadcrumb route={this.props.routes[this.props.routes.length - 1].path}/>
-                <div className="contentPage">{this.props.children}</div>
+                <NavBar className="menuIcon" userName={this.state.user.prenom || ""} isLogged={this.state.isLogged}/>
+                <Breadcrumb route={route}/>
+                <div className="contentPage">{React.cloneElement(this.props.children, { isLogged: this.state.isLogged })}</div>
             </div>
         );
     }

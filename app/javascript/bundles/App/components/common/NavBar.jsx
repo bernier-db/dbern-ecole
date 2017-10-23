@@ -41,14 +41,17 @@ class NavBar extends React.Component {
             <header style={this.state.styles}>
 
 
-                <MenuIcon isLogged={this.props.userName != null || this.props.userName !== ""} fill={"#222222"}
+                <MenuIcon isLogged={this.props.isLogged} fill={"#222222"}
                           toggleActive={this.toggleSideBarActive} activeClass={this.state.sideBarActive}/>
 
                 <Logo userName={this.props.userName}/>
                 <NavLinks/>{/*
 				<Search SearchName="headerSearch" />*/}
-                <HeaderProfile userName={this.props.userName} activeClass={this.state.profileActive}
-                               toggleActive={this.toggleActive}/>
+                <HeaderProfile userName={this.props.userName}
+                               activeClass={this.state.profileActive}
+                               toggleActive={this.toggleActive}
+                                isLogged={this.props.isLogged}
+                />
 
 
             </header>
@@ -57,7 +60,8 @@ class NavBar extends React.Component {
 }
 
 NavBar.propTypes = {
-    userName: PropTypes.string.isRequired
+    userName: PropTypes.string.isRequired,
+    isLogged: PropTypes.bool.isRequired
 };
 
 export default NavBar;

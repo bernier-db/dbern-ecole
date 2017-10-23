@@ -17,8 +17,8 @@ const SideBar = (props) => {
 			<Link className="menuItem" to={"games"} activeClassName="activeSideLink">Games</Link>
 			<div className="separator"></div>
 			{props.isLogged && <div>
-				<Link className="menuItem ifLogged" to={"profile"} activeClassName="activeSideLink">Profile</Link>
-				<Link className="menuItem ifLogged" to={"friends"} activeClassName="activeSideLink">Friends</Link>
+				<Link className="menuItem ifLogged" to={"/profile"} activeClassName="activeSideLink">Profile</Link>
+				<Link className="menuItem ifLogged" to={"/friends"} activeClassName="activeSideLink">Friends</Link>
 				<div className="separator"></div>
 				<div className="menuItem sideLog" >Log out</div>
 			</div>}

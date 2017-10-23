@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Slogan = (props) => {
 	let sentence = "...get lost";
-	if (props.userName != "") sentence = sentence + ", " + props.userName;
+	if (props.userName != null && props.userName != "") sentence = sentence + ", " + props.userName;
 
 	const style = {
 		color: '#B3B3B3'

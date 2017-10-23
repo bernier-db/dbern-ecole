@@ -8,10 +8,10 @@ class NavLinks extends React.Component {
 		return (
 			<div className="navLinks">
 
-					<Link to={"home"} activeClassName="activeNavLink"><div>Home</div></Link>
+					<Link to={"/home"} activeClassName="activeNavLink"><div>Home</div></Link>
 
 
-					<Link to={"games"} activeClassName="activeNavLink">	<div>Games</div></Link>
+					<Link to={"/games"} activeClassName="activeNavLink">	<div>Games</div></Link>
 
 			</div>
 		);
