@@ -559,3 +559,7 @@ a.menuItem.activeSideLink:hover {
     display: block;
     margin: 8px;
 }
+.loginPage form input:not([type="checkbox"]).error {
+    background-color: #ffcccb;
+    border-color: #aB0000;
+}

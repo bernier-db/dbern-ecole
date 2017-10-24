@@ -23,7 +23,6 @@ class NavBar extends React.Component {
         };
         this.toggleActive = this.toggleActive.bind(this);
         this.toggleSideBarActive = this.toggleSideBarActive.bind(this);
-        this.logOut = this.logOut.bind(this);
     }
 
     toggleActive() {
@@ -32,23 +31,6 @@ class NavBar extends React.Component {
 
     toggleSideBarActive() {
         this.setState({sideBarActive: !this.state.sideBarActive});
-    }
-
-    logOut(){
-        $.ajax({
-            method: "DELETE",
-            url: "/users/sign_out",
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('X-CSRF-Token', auth)
-            },
-            data:{
-                authenticity_token: auth
-            },
-            success: function(){
-                this.props.logOut();
-                window.location.href="/";
-            }
-        });
     }
 
 

@@ -3,15 +3,15 @@ Rails.application.routes.draw do
 
   get 'hello_world', to: 'hello_world#index'
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
   }
 
   post '/users/sign_in', to: 'users/sessions#create'
   delete '/users/sign_out', to: 'users/sessions#destroy'
 
-    get '/auth/is_signed_in', to: 'main#is_signed_in'
 
+  get '/auth/is_signed_in', to: 'main#is_signed_in'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get '/friends', to: 'main#index'
   #####################################
 
-#friendships
+  #friendships
   get '/friends/getMyFriends', to: 'friendship#FetchFriends'
   post '/friends/newFriendRequest', to: 'friendship#newFriendRequest'
   post '/friends/answerRequest', to: 'friendship#answerRequest'
@@ -40,7 +40,6 @@ Rails.application.routes.draw do
   get '/games/:id', to: 'game#get'
   get '/games/:id/play', to: 'game#play'
   post '/games/:joust_id/win', to: 'game#win'
-
 
 
 end

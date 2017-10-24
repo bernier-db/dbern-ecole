@@ -1,37 +1,37 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-   before_action :configure_sign_up_params, only: [:create]
-   before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
-   def create
-     build_resource
-    byebug
-     if resource.save
-       if resource.active_for_authentication?
-         set_flash_message :notice, :signed_up if is_navigational_format?
-         sign_up(resource_name, resource)
-         return render :json => {:success => true, :user => current_user}
-       else
-         set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_navigational_format?
-         expire_session_data_after_sign_in!
-         return render :json => {:success => true, :user => current_user}
-       end
-     else
-       clean_up_passwords resource
-       return render :json => {:success => false}
-     end
-   end
+  def create
+    if User.find_by_email(params[:email]) != nil
+      return render :json => {success: false, msg: 'Email already registered'}
+    end
 
-   # Signs in a user on sign up. You can overwrite this method in your own
-   # RegistrationsController.
-   def sign_up(resource_name, resource)
-     sign_in(resource_name, resource)
-   end
-   private
+    @user = User.new(:email => params[:email],
+                     :password => params[:password],
+                     :password_confirmation => params[:password_confirmation],
+                      :nom => params[:nom],
+                      :prenom => params[:prenom])
+
+    if @user.save
+      then
+        sign_in(@user)
+        signed = user_signed_in?
+       render :json => {success: true, user: @user, isLogged: signed}
+    else
+      clean_up_passwords @user
+      render :json => {success: false, msg: 'An error happened'}
+    end
+  end
+
+
+  private
 
   # If you have extra params to permit, append them to the sanitizer.
-   def configure_sign_up_params
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:prenom, :nom, :email, :password, :password_confirmation])
-   end
+  def configure_sign_up_params
+
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:prenom, :nom, :email, :password, :password_confirmation])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   #  def configure_account_update_params

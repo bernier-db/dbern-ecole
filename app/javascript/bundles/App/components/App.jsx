@@ -30,7 +30,7 @@ class App extends React.Component {
             success: function (data) {
                 console.log(data);
 
-                this.setState({
+                this.setUser({
                     isLogged: data.signed_in,
                     user: {
                         prenom: data.signed_in ? data.user.prenom : null,
@@ -43,16 +43,35 @@ class App extends React.Component {
         });
     }
 
+    redirect(path){
+        Router.browserHistory.push(path);
+    }
+
     logout() {
-        this.setState({
-            isLogged: false,
-            user: {
-                prenom: null,
-                nom: null,
-                id: null,
-                email: null
-            }
+        $.ajax({
+            method: "DELETE",
+            url: "/users/sign_out",
+            data:{authenticity_token: auth},
+            success: function (res) {
+                console.debug('App - logout', res);
+                this.setState({
+                    isLogged: false,
+                    user: {
+                        prenom: null,
+                        nom: null,
+                        id: null,
+                        email: null
+                    }
+                });
+            }.bind(this)
         });
+    }
+
+    setUser(state) {
+        this.setState({
+            user: state.user,
+            isLogged: state.isLogged
+        })
     }
 
     render() {
@@ -60,10 +79,19 @@ class App extends React.Component {
         let route = this.props.routes[this.props.routes.length - 1].path == undefined ? "" : this.props.routes[this.props.routes.length - 1].path
         return (
             <div>
-                <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""} isLogged={this.state.isLogged}/>
+                <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""}
+                        isLogged={this.state.isLogged}/>
                 <Breadcrumb route={route}/>
                 <div
-                    className="contentPage">{React.cloneElement(this.props.children, {isLogged: this.state.isLogged})}</div>
+                    className="contentPage">
+                    {React.cloneElement(this.props.children,
+                        {
+                            setSigned_in: this.setUser.bind(this),
+                            isLogged: this.state.isLogged,
+                            redirect: this.redirect.bind(this)
+                        }
+                    )}
+                </div>
             </div>
         );
     }
