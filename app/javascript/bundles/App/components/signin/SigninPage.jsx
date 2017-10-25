@@ -167,9 +167,9 @@ class SigninPage extends React.Component {
 
         return (
             <div className="loginPage">
-                {this.state.displayMessage &&
-                <div className={"message " + this.state.messageType}>{this.state.message}</div>
-                }
+
+                <div className={"message " + this.state.messageType + (this.state.displayMessage ? ' active' : '')}>{this.state.message}</div>
+
                 <form className="green" onSubmit={this.login}>
                     <h3>Login</h3>
                     <input name="email" type="email" placeholder="Email" value={this.state.email}

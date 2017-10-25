@@ -16,7 +16,8 @@ class App extends React.Component {
                 nom: null,
                 prenom: null,
                 email: null
-            }
+            },
+            loaded: false
         };
         this.logout = this.logout.bind(this);
     }
@@ -30,15 +31,16 @@ class App extends React.Component {
             success: function (data) {
                 console.log(data);
 
-                this.setUser({
+                this.setState({
                     isLogged: data.signed_in,
                     user: {
                         prenom: data.signed_in ? data.user.prenom : null,
                         nom: data.signed_in ? data.user.nom : null,
                         email: data.signed_in ? data.user.email : null,
                         id: data.signed_in ? data.user.id : null
-                    }
-                })
+                    },
+                    loaded: true
+                });
             }.bind(this)
         });
     }
@@ -61,7 +63,7 @@ class App extends React.Component {
                         nom: null,
                         id: null,
                         email: null
-                    }
+                    },
                 });
             }.bind(this)
         });
@@ -82,16 +84,18 @@ class App extends React.Component {
                 <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""}
                         isLogged={this.state.isLogged}/>
                 <Breadcrumb route={route}/>
+                {this.state.loaded ?
                 <div
                     className="contentPage">
                     {React.cloneElement(this.props.children,
                         {
                             setSigned_in: this.setUser.bind(this),
                             isLogged: this.state.isLogged,
-                            redirect: this.redirect.bind(this)
+                            redirect: this.redirect.bind(this),
+                            user: this.state.user
                         }
                     )}
-                </div>
+                </div> : ''}
             </div>
         );
     }

@@ -24,6 +24,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def update
+
+    account_update_params = devise_parameter_sanitizer.sanitize(:update_user)
+
+    # required for settings form to submit when password is left blank
+    if account_update_params[:password].blank?
+      account_update_params.delete("password")
+      account_update_params.delete("password_confirmation")
+    end
+
+    @user = User.find(current_user.id)
+
+    @update = update_resource(@user, account_update_params)
+
+    if @update
+      # Sign in the user bypassing validation in case their password changed
+      bypass_sign_in(@user)
+      render :json=>{ok: true, user: current_user, msg: "Info updated!"}
+    else
+      render :json=>{ok:false, msg: 'Error updating'}
+    end
+  end
+
 
   private
 
@@ -34,11 +57,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-  #  def configure_account_update_params
-  #
-  #    devise_parameter_sanitizer.permit(:user)
-  #  end
+   def configure_account_update_params
 
+     devise_parameter_sanitizer.permit(:update_user, keys:[:email, :password, :password_confirmation, :current_password, :prenom, :nom])
+   end
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
   # The path used after sign up.
   #  def after_sign_up_path_for(resource)
   #   super(resource)

@@ -14,6 +14,7 @@ a{
 header {
     display: flex;
     flex-flow: row nowrap;
+    z-index:99;
 }
 
 header div {
@@ -562,4 +563,113 @@ a.menuItem.activeSideLink:hover {
 .loginPage form input:not([type="checkbox"]).error {
     background-color: #ffcccb;
     border-color: #aB0000;
+}
+.message{
+    margin-bottom: auto;
+    border-radius: 5px;
+    top: -80px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    height:0;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transform: visibility 0s, opacity 0.5s linear;
+    -moz-transform: visibility 0s, opacity 0.5s linear;
+    -ms-transform: visibility 0s, opacity 0.5s linear;
+    -o-transform: visibility 0s, opacity 0.5s linear;
+    -webkit-transition: height 0s 0.5s;
+    -moz-transition: height 0s 0.5s ;
+    -ms-transition: height 0s 0.5s ;
+    -o-transition: height 0s 0.5s ;
+    transition: height 0s 0.5s ;
+}
+.message.error {
+    background-color: #ffbfbf;
+    border: 1px solid #a50000;
+    color: #c50000;
+}
+.message.success{
+    background-color: #bfffbf;
+    border: 1px solid #00a500;
+    color: #00a500;
+}
+.message.active {
+    visibility: visible;
+    opacity: 1;
+    height:auto;
+    padding: 3px;
+    transition: visibility 0s, opacity 0.5s linear;
+    -webkit-transform: visibility 0s, opacity 0.5s linear;
+    -moz-transform: visibility 0s, opacity 0.5s linear;
+    -ms-transform: visibility 0s, opacity 0.5s linear;
+    -o-transform: visibility 0s, opacity 0.5s linear;
+}
+
+
+/*************** Profile page ***********************/
+h2{
+    font-family: 'Arial', sans-serif;
+    margin:0;
+}
+.label{
+    text-align: right;
+    margin-right: 5px;
+}
+.bold{
+    font-weight: bold;
+}
+.flex {
+    display:flex;
+}
+.flex.space-between {
+    justify-content: space-between;
+}
+.flex.space-between.wrap{
+    flex-flow:wrap;
+}
+.flex.flex-end{
+    justify-items: flex-end;
+}
+.flex-fixed-400{
+    flex: 0 1 350px;
+    margin: 0 10px;
+}
+
+.rect-section{
+    border-top: 1px solid black;
+    padding-top: 8px;
+    width: 100%;
+}
+.rect-section form{
+    flex-flow:column nowrap;
+}
+.rect-section form label{
+    margin: 5px 0;
+    margin-left:auto;
+    display:flex;
+    flex-flow: row nowrap;
+}
+.rect-section form button{
+    margin-left: auto;
+    min-width: 100px;
+}
+.margin-bottom{
+    margin-bottom:50px;
+}
+.flex .right{
+    margin-left: auto;
+}
+.flex.column{
+    flex-direction:column;
+}
+.listing{
+    width: 100%;
+}
+.listing .listing-item{
+    display:flex;
+    justify-content:space-between;
+    padding: 3px 8px;
+}
+.listing .listing-item:not(.listing-header):nth-child(2n){
+    background-color:white;
 }
