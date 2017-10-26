@@ -23,7 +23,7 @@ class FriendshipController < ApplicationController
   end
 
 
-#NEW
+#post '/friends/newFriendRequest'
   def newFriendRequest
 
     email = params[:email]
@@ -32,12 +32,12 @@ class FriendshipController < ApplicationController
 
 
     if (user_id == friend_id)
-      render :json => {state: 'same person'}
+      render :json => {ok:false, msg: 'Impossible, it\'s you!'}
       return
     end
 
     if (Relationship.friendExist?(user_id, friend_id))
-      render :json => {state: 'exists'}
+      render :json => {ok:false, msg:'You are already friends!'}
       return
     end
 
@@ -46,34 +46,32 @@ class FriendshipController < ApplicationController
                             friend_id: friend_id,
                             status: 'waiting')
     if (@rel.save)
-      render :json => {state: 'sent'}
+      render :json => {ok:true, msg: 'Request sent!'}
       return
     else
-      render :json => {state: 'error'}
+      render :json => {ok: false, msg:'An error occured'}
     end
   end
 
 
-#Answer Request
+#post '/friends/answerRequest'
   def answerRequest
     id = params[:id]
     answer = params[:answer]
 
-    if (answer != "0" && answer != '1')
-      render :json => {state: 'wrong type of answer'}
+    rel = Relationship.find(id)
+    if rel === nil
+      render :json => {ok:false, msg: 'Request not found'}
       return
     end
-
-    rel = Relationship.find(id)
-    if (rel.user_id != current_user.id && rel.friend_id != current_user.id)
+    if rel.user_id != current_user.id && rel.friend_id != current_user.id
       return head :unauthoried
     end
 
+    status = answer == "true" ? 'accepted' : 'rejected'
 
-    status = answer == 0 ? 'rejected' : 'accepted'
-
-    if (rel.status != 'waiting')
-      render :json => {state: 'Relationshhip not pending'}
+    if rel.status != 'waiting'
+      render :json => {ok:false, msg: 'Request already answered'}
       return
     end
 
@@ -81,16 +79,17 @@ class FriendshipController < ApplicationController
     rel.status = status
     rel.save
 
-    render :json => {state: "request #{status}"}
+    render :json => {ok:true, msg: "Friend request #{status}"}
   end
 
   def delete
     id = params[:id]
-
-    Relationship.find(id).destroy
-
-    render :json => {state: 'deleted'}
-
+    rel = Relationship.find(id)
+    if rel != nil &.destroy
+    render :json => {ok:true, state: 'deleted'}
+    else
+    render :json =>{ok: false}
+    end
   end
 
 

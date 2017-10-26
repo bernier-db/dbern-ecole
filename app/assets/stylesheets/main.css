@@ -22,7 +22,8 @@ header {
 header div {
     flex: auto;
 }
-input[type="email"]{
+
+input[type="email"] {
     border: 1px solid #d2d2d2;
     padding: 5px 7px;
 }
@@ -34,31 +35,86 @@ input[type="email"]{
     margin-right: auto;
     justify-content: center;
 }
-.btn{
+.margin-top-30{
+    margin-top: 30px;
+}
+.cancelIcon svg path{
+    fill: #d33;
+    -webkit-transition: fill 250ms;
+    -moz-transition: fill 250ms;
+    -ms-transition: fill 250ms;
+    -o-transition: fill 250ms;
+    transition: fill 250ms;
+}
+
+.cancelIcon:hover svg path{
+    fill: #a00;
+    -webkit-transition: fill 250ms;
+    -moz-transition: fill 250ms;
+    -ms-transition: fill 250ms;
+    -o-transition: fill 250ms;
+    transition: fill 250ms;
+}
+.background-color-trans, background-color-trans:hover{
+    -webkit-transition: background-color 250ms;
+    -moz-transition: background-color 250ms;
+    -ms-transition: background-color 250ms;
+    -o-transition: background-color 250ms;
+    transition: background-color 250ms;
+}
+
+.btn {
     min-width: 60px;
-    display:inline-block;
+    display: inline-block;
     text-align: center;
     font-family: 'Helvetica', sans-serif;
     border-radius: 5px;
     vertical-align: -webkit-baseline-middle;
     cursor: pointer;
+    border: 1px solid black;
+
 }
-.btn-blue{
+.btn.disabled{
+    color:grey;
+}
+.btn.btn-group-left {
+    border-radius: 5px 0 0 5px;
+    margin-right: -1px;
+}
+
+.btn.btn-group-right {
+    border-radius: 0 5px 5px 0;
+}
+
+.btn-blue {
     background-color: #DAE8FC;
     border: 1px solid #6C8EBF;
-    -webkit-transition: background-color 250ms;
-    -moz-transition: background-color 250ms ;
-    -ms-transition: background-color 250ms ;
-    -o-transition: background-color 250ms ;
-    transition: background-color 250ms ;
+
 }
-.btn-blue:hover{
+
+.btn-blue:hover:not(.disabled) {
     background-color: #6C8EBF;
-    -webkit-transition: background-color 250ms;
-    -moz-transition: background-color 250ms ;
-    -ms-transition: background-color 250ms ;
-    -o-transition: background-color 250ms ;
-    transition: background-color 250ms ;
+}
+
+.btn.btn-green {
+    background-color: #8d8;
+    border-color: #5a5;
+}
+
+.btn.btn-green:hover:not(.disabled) {
+    backgroun-color: #5a5;
+}
+.btn.btn-red {
+    background-color: #f88;
+    border-color: #a55;
+}
+.btn.btn-red:hover:not(.disabled) {
+    background-color: #a55;
+
+}
+
+.btn.btn-green:hover:not(.disabled) {
+    background-color: #5a5;
 }
 .menuIcon {
     display: flex;
@@ -671,14 +727,28 @@ h2 {
     font-weight: bold;
 }
 
+.max-w-240 {
+    max-width: 240px;
+}
+
+.centered-LR {
+    margin: 0 auto;
+}
+
 .flex {
     display: flex;
 }
-.flex-auto{
+
+.flex-auto {
     flex: 1 1 auto;
 }
+
 .flex.space-between {
     justify-content: space-between;
+}
+
+.flex-align-center {
+    align-items: center;
 }
 
 .flex.space-between.wrap {
@@ -743,7 +813,12 @@ h2 {
     padding: 3px 8px;
     align-items: center;
 }
-
+.listing-item.green{
+    background-color: #8d8 !important;
+}
+.listing-item.red{
+    background-color: #d33 !important;
+}
 .listing .listing-item.margin {
     margin-bottom: 5px;
 }

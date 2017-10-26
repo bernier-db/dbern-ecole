@@ -15,7 +15,7 @@ class User < ApplicationRecord
     User.find(id).friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*") + User.find(id).inverse_friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*")
   end
 
-  def self.PendingRecRequests(id)
+  def self. PendingRecRequests(id)
     User.find(id).inverse_friends.where("relationships.status = 'waiting'").select("relationships.id as rel_id, users.*")
 
   end
