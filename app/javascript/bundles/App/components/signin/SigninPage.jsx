@@ -18,16 +18,10 @@ class SigninPage extends React.Component {
             messageType: "",
             message: "",
             submitted: false,
-            readyToRedirect: false
         };
         this.login = this.login.bind(this);
         this.register = this.register.bind(this);
         this.displayError = this.displayError.bind(this);
-    }
-
-    componentDidUpdate(){
-        if(this.state.readyToRedirect)
-            this.props.redirect('/');
     }
 
     login(e) {
@@ -63,6 +57,7 @@ class SigninPage extends React.Component {
                             email: res.user.email
                         }
                     });
+                    this.props.redirect('/home');
                 }
             });
     }

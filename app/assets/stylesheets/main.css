@@ -7,18 +7,24 @@ body {
     background-color: #F5F5F5;
     margin: 0;
 }
-a{
+
+a {
     text-decoration: none;
     color: #2f76b4;
 }
+
 header {
     display: flex;
     flex-flow: row nowrap;
-    z-index:99;
+    z-index: 99;
 }
 
 header div {
     flex: auto;
+}
+input[type="email"]{
+    border: 1px solid #d2d2d2;
+    padding: 5px 7px;
 }
 
 #sideMenuContainer {
@@ -28,7 +34,32 @@ header div {
     margin-right: auto;
     justify-content: center;
 }
-
+.btn{
+    min-width: 60px;
+    display:inline-block;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 5px;
+    vertical-align: -webkit-baseline-middle;
+    cursor: pointer;
+}
+.btn-blue{
+    background-color: #DAE8FC;
+    border: 1px solid #6C8EBF;
+    -webkit-transition: background-color 250ms;
+    -moz-transition: background-color 250ms ;
+    -ms-transition: background-color 250ms ;
+    -o-transition: background-color 250ms ;
+    transition: background-color 250ms ;
+}
+.btn-blue:hover{
+    background-color: #6C8EBF;
+    -webkit-transition: background-color 250ms;
+    -moz-transition: background-color 250ms ;
+    -ms-transition: background-color 250ms ;
+    -o-transition: background-color 250ms ;
+    transition: background-color 250ms ;
+}
 .menuIcon {
     display: flex;
     align-self: stretch;
@@ -180,7 +211,7 @@ header div {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    position:relative;
+    position: relative;
     -webkit-transition: all 400ms ease-in-out;
     -moz-transition: all 400ms ease-in-out;
     -ms-transition: all 400ms ease-in-out;
@@ -192,7 +223,7 @@ header div {
 
     width: 40px;
     height: 40px;
-    position:absolute;
+    position: absolute;
 }
 
 .headerProfile > div > svg > path {
@@ -220,13 +251,15 @@ header div {
     -ms-user-select: none;
     -webkit-user-select: none;
 }
+
 .headerProfile a {
-    color:white;
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items:center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
 .profileButton {
     display: flex;
     align-items: center;
@@ -384,7 +417,7 @@ a.menuItem.activeSideLink:hover {
 }
 
 .contentPage {
-    padding: 0 60px;
+    padding: 30px 60px;
 }
 
 @media screen and (max-width: 768px) {
@@ -396,15 +429,15 @@ a.menuItem.activeSideLink:hover {
 
 .gameCaroussel {
     max-width: 50%;
-    margin: 40px 0;
+    margin: 0 0 40px;
 }
 
 @media screen and (max-width: 500px) {
     .gameCaroussel {
         max-width: 100%;
-        width:90%;
+        width: 90%;
         text-align: center;
-        width:100%;
+        width: 100%;
     }
 }
 
@@ -476,11 +509,11 @@ a.menuItem.activeSideLink:hover {
     transition: opacity 250ms;
 }
 
-
 .gameCaroussel .singleGame .imgHover:hover {
     opacity: 0.7;
     transition: opacity 250ms;
 }
+
 .gameList {
     float: right;
     position: absolute;
@@ -489,23 +522,27 @@ a.menuItem.activeSideLink:hover {
     max-width: 320px;
     width: 40%;
 }
+
 .gameList h1 {
     margin: 0;
-    font-size:25px;
+    font-size: 25px;
     font-family: sans-serif;
 }
+
 .gameList .list {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     padding: 8px 0;
     width: 100%;
 }
-.gameList .list a{
-    display:block;
+
+.gameList .list a {
+    display: block;
 }
-@media screen and (max-width:500px){
-    .gameList{
-        display:none;
+
+@media screen and (max-width: 500px) {
+    .gameList {
+        display: none;
     }
 }
 
@@ -519,6 +556,7 @@ a.menuItem.activeSideLink:hover {
     flex-flow: row wrap;
     height: 100%;
 }
+
 .loginPage form {
     text-align: center;
     max-width: 250px;
@@ -526,32 +564,40 @@ a.menuItem.activeSideLink:hover {
     display: flex;
     flex-flow: column nowrap;
 }
+
 .loginPage form h3 {
     margin: 0;
     font-family: 'Arial';
 }
+
 .loginPage form.green {
     background-color: #ddf5dd;
 }
+
 .loginPage form.green input[type="submit"] {
     border: none;
     background-color: #8d8;
     cursor: pointer;
 }
+
 .loginPage form.green input[type="submit"]:hover {
     background-color: #39c639;
 }
+
 .loginPage form.blue {
     background-color: #ddddf5;
 }
+
 .loginPage form.blue input[type="submit"] {
     border: none;
     background-color: #88d;
     cursor: pointer;
 }
+
 .loginPage form.blue input[type="submit"]:hover {
     background-color: #3939c6;
 }
+
 .loginPage form input:not([type="checkbox"]) {
     border-radius: 5px;
     border: 1px solid gray;
@@ -560,43 +606,48 @@ a.menuItem.activeSideLink:hover {
     display: block;
     margin: 8px;
 }
+
 form input:not([type="checkbox"]).error {
     background-color: #ffcccb;
     border-color: #aB0000;
 }
-.message{
+
+.message {
     margin-bottom: auto;
     border-radius: 5px;
     top: -80px;
     text-align: center;
     visibility: hidden;
     opacity: 0;
-    height:0;
+    height: 0;
     transition: visibility 0s, opacity 0.5s linear;
     -webkit-transform: visibility 0s, opacity 0.5s linear;
     -moz-transform: visibility 0s, opacity 0.5s linear;
     -ms-transform: visibility 0s, opacity 0.5s linear;
     -o-transform: visibility 0s, opacity 0.5s linear;
     -webkit-transition: height 0s 0.5s;
-    -moz-transition: height 0s 0.5s ;
-    -ms-transition: height 0s 0.5s ;
-    -o-transition: height 0s 0.5s ;
-    transition: height 0s 0.5s ;
+    -moz-transition: height 0s 0.5s;
+    -ms-transition: height 0s 0.5s;
+    -o-transition: height 0s 0.5s;
+    transition: height 0s 0.5s;
 }
+
 .message.error {
     background-color: #ffbfbf;
     border: 1px solid #a50000;
     color: #c50000;
 }
-.message.success{
+
+.message.success {
     background-color: #bfffbf;
     border: 1px solid #00a500;
     color: #00a500;
 }
+
 .message.active {
     visibility: visible;
     opacity: 1;
-    height:auto;
+    height: auto;
     padding: 3px;
     transition: visibility 0s, opacity 0.5s linear;
     -webkit-transform: visibility 0s, opacity 0.5s linear;
@@ -605,71 +656,110 @@ form input:not([type="checkbox"]).error {
     -o-transform: visibility 0s, opacity 0.5s linear;
 }
 
-
 /*************** Profile page ***********************/
-h2{
+h2 {
     font-family: 'Arial', sans-serif;
-    margin:0;
+    margin: 0;
 }
-.label{
+
+.label {
     text-align: right;
     margin-right: 5px;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
+
 .flex {
-    display:flex;
+    display: flex;
+}
+.flex-auto{
+    flex: 1 1 auto;
 }
 .flex.space-between {
     justify-content: space-between;
 }
-.flex.space-between.wrap{
-    flex-flow:wrap;
+
+.flex.space-between.wrap {
+    flex-flow: wrap;
 }
-.flex.flex-end{
+
+.flex.flex-end {
     justify-items: flex-end;
 }
-.flex-fixed-400{
+
+.flex-fixed-400 {
     flex: 0 1 350px;
     margin: 0 10px;
 }
 
-.rect-section{
+.rect-section {
     border-top: 1px solid black;
     padding-top: 8px;
     width: 100%;
 }
-.rect-section form{
-    flex-flow:column nowrap;
+
+.rect-section form {
+    flex-flow: column nowrap;
 }
-.rect-section form label{
+
+.rect-section form label {
     margin: 5px 0;
-    margin-left:auto;
-    display:flex;
+    margin-left: auto;
+    display: flex;
     flex-flow: row nowrap;
 }
-.rect-section form button{
+
+.rect-section form button {
     margin-left: auto;
     min-width: 100px;
 }
-.margin-bottom{
-    margin-bottom:50px;
+
+.margin-bottom {
+    margin-bottom: 50px;
 }
-.flex .right{
+
+.flex .right {
     margin-left: auto;
 }
-.flex.column{
-    flex-direction:column;
+
+.flex.column {
+    flex-direction: column;
 }
-.listing{
+
+.align-center {
+    align-items: center;
+}
+
+.listing {
     width: 100%;
+    flex-direction: column;
 }
-.listing .listing-item{
-    display:flex;
-    justify-content:space-between;
+
+.listing .listing-item {
+    display: flex;
+    justify-content: space-between;
     padding: 3px 8px;
+    align-items: center;
 }
-.listing .listing-item:not(.listing-header):nth-child(2n){
-    background-color:white;
+
+.listing .listing-item.margin {
+    margin-bottom: 5px;
+}
+
+.listing .listing-item.padding {
+    padding: 5px 10px;
+}
+
+.listing .listing-item:not(.listing-header):nth-child(2n) {
+    background-color: white;
+}
+
+.listing .listing-item:not(.listing-header):nth-child(2n-1) {
+    background-color: #f9f9f9;
+}
+
+.clickable {
+    cursor: pointer;
 }

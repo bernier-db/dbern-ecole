@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
   #   devise_parameter_sanitizer.for(:sign_up) << :provider
   #   devise_parameter_sanitizer.for(:sign_up) << :uid
   # end
+
+  def authenticate_user
+    if not user_signed_in?
+      redirect_to "/sign_in"
+    end
+  end
 end

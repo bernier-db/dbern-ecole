@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced4afbd-9b57-4a7f-a35b-082cb757d779" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/App/components/Index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/HelloWorld/components/App.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/javascript/bundles/HelloWorld/components/HelloWorld.jsx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/fonts/Bangers.ttf" afterPath="$PROJECT_DIR$/app/assets/fonts/Bangers.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/default.jpg" afterPath="$PROJECT_DIR$/app/assets/images/default.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/tictactoe.png" afterPath="$PROJECT_DIR$/app/assets/images/tictactoe.png" />
@@ -117,135 +114,81 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
-                <element signature="n#!!block;n#logout#0;n#App#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavBar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HeaderProfile.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileMenu.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SigninPage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/signin/SigninPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-              <folding>
-                <element signature="n#!!block;n#register#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#displayError#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#emailValueChange#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#passwordValueChange#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#confirm_passwordValueChange#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#comparePasswords#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#nomValueChange#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#prenomValueChange#0;n#SigninPage#0" expanded="false" />
-                <element signature="n#!!block;n#rememberMeValueChange#0;n#SigninPage#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomePage.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="540" column="43" lean-forward="false" selection-start-line="540" selection-start-column="43" selection-end-line="540" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfilePage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#componentWillMount#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#submitInfo#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onCancelInfo#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#comparePasswords#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#toggleEditInfo#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onPrenomChange#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onNomChange#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onEmailChange#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onCurrentChange#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onNewChange#0;n#ProfilePage#0" expanded="false" />
-                <element signature="n#!!block;n#onConfirmChange#0;n#ProfilePage#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sessions_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users/sessions_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="87" lean-forward="true" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registrations_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users/registrations_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="FriendsPage.jsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="275">
+                  <caret line="55" column="112" lean-forward="true" selection-start-line="55" selection-start-column="112" selection-end-line="55" selection-end-column="112" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/routes.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="262">
+                  <caret line="677" column="19" lean-forward="false" selection-start-line="677" selection-start-column="19" selection-end-line="677" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="friendship_controller.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controllers/friendship_controller.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ProfilePage.jsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="256" column="47" lean-forward="true" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="n#!!block;n#componentWillMount#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#submitInfo#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onCancelInfo#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#comparePasswords#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#toggleEditInfo#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onPrenomChange#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onNomChange#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onEmailChange#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onCurrentChange#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onNewChange#0;n#ProfilePage#0" expanded="false" />
+                    <element signature="n#!!block;n#onConfirmChange#0;n#ProfilePage#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -258,14 +201,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sign_up</find>
-      <find>success</find>
-      <find>register</find>
-      <find>redirect</find>
-      <find>.message</find>
       <find>displayMessage</find>
       <find>messageType</find>
-      <find>content</find>
       <find>rect</find>
       <find>true</find>
       <find>togglee</find>
@@ -275,19 +212,25 @@
       <find>dip</find>
       <find>save</find>
       <find>h2</find>
-      <find>console</find>
       <find>message</find>
       <find>error</find>
       <find>turbo</find>
-      <find>type</find>
       <find>disable</find>
       <find>signIn</find>
       <find>push</find>
       <find>sign_</find>
       <find>confirm</find>
       <find>submit</find>
+      <find>console</find>
       <find>logout</find>
       <find>menu</find>
+      <find>space</find>
+      <find>content</find>
+      <find>.content</find>
+      <find>carousel</find>
+      <find>type</find>
+      <find>flex</find>
+      <find>.flex</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -296,10 +239,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/home/routes.js" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Breadcrumb.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Logo.jsx" />
-        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/Search.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/games/GamesPage.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -310,7 +251,6 @@
         <option value="$PROJECT_DIR$/public/packs/manifest.json" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/fonts.css.scss" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" />
         <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/home/gameCarousel.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/home/GameCarousel.jsx" />
@@ -329,13 +269,11 @@
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/MenuIcon.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/SideBar.jsx" />
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/config/initializers/filter_parameter_logging.rb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/stats_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -345,8 +283,13 @@
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileMenu.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx" />
-        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/signin/SigninPage.jsx" />
         <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx" />
+        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/signin/SigninPage.jsx" />
+        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/friendship_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css" />
+        <option value="$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx" />
       </list>
     </option>
   </component>
@@ -359,7 +302,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -379,6 +322,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -402,6 +347,19 @@
               <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
               <item name="DBern" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBern" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DBern" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="javascript" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -436,17 +394,7 @@
               <item name="bundles" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DBern" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="javascript" type="462c0819:PsiDirectoryNode" />
-              <item name="bundles" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="friends" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DBern" type="b2602c69:ProjectViewProjectNode" />
@@ -457,8 +405,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -467,19 +413,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="Y:\Rails\testApp\app\assets\stylesheets" />
-      <recent name="Y:\Rails\testApp\app\javascript\bundles\HelloWorld\components" />
-      <recent name="Y:\Rails\testApp\app\views\home" />
-      <recent name="Y:\Rails\testApp\config" />
-      <recent name="Y:\Rails\testApp\app\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Y:\Rails\DBern\app\javascript\bundles\App\components\signin" />
       <recent name="Y:\Rails\testApp\app\assets\fonts" />
       <recent name="Y:\Rails\testApp\vendor\assets\fonts" />
       <recent name="Y:\Rails\testApp\app\javascript\packs" />
       <recent name="Y:\Rails\testApp\app\javascript\bundles\HelloWorld\components\gamesX" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Y:\Rails\testApp\app\assets\stylesheets" />
+      <recent name="Y:\Rails\testApp\app\javascript\bundles\HelloWorld\components" />
+      <recent name="Y:\Rails\testApp\app\views\home" />
+      <recent name="Y:\Rails\testApp\config" />
+      <recent name="Y:\Rails\testApp\app\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -594,35 +540,36 @@
       <workItem from="1508621328158" duration="14527000" />
       <workItem from="1508641200401" duration="46386000" />
       <workItem from="1508851528840" duration="20192000" />
-      <workItem from="1508949083131" duration="44906000" />
+      <workItem from="1508949083131" duration="48453000" />
+      <workItem from="1509138036777" duration="9770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126011000" />
+    <option name="totallyTimeSpent" value="139328000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15300146" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1522694" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33376962" sideWeight="0.5051395" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.49707174" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33246073" sideWeight="0.4948605" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -658,20 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/game.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -784,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,15 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,18 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/auth_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users/confirmations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,9 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,17 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,38 +852,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="540" column="43" lean-forward="false" selection-start-line="540" selection-start-column="43" selection-end-line="540" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="87" lean-forward="true" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
+          <caret line="20" column="87" lean-forward="false" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users/registrations_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="170">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#logout#0;n#App#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1000,10 +906,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/signin/SigninPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!block;n#register#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#displayError#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#emailValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#passwordValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#confirm_passwordValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#comparePasswords#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#nomValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#prenomValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#rememberMeValueChange#0;n#SigninPage#0" expanded="false" />
+            <element signature="n#!!block;n#validateRegister#0;n#SigninPage#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/auth_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/ProfileIcon.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="132" lean-forward="false" selection-start-line="7" selection-start-column="132" selection-end-line="7" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users/registrations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/friendship_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/profile/ProfilePage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="255">
+          <caret line="256" column="47" lean-forward="true" selection-start-line="256" selection-start-column="47" selection-end-line="256" selection-end-column="47" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#componentWillMount#0;n#ProfilePage#0" expanded="false" />
@@ -1021,57 +994,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/App.jsx">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        <state relative-caret-position="262">
+          <caret line="677" column="19" lean-forward="false" selection-start-line="677" selection-start-column="19" selection-end-line="677" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/friends/FriendsPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="55" column="112" lean-forward="true" selection-start-line="55" selection-start-column="112" selection-end-line="55" selection-end-column="112" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
-            <element signature="n#!!block;n#logout#0;n#App#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/NavBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/common/HeaderProfile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/signin/SigninPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!block;n#register#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#displayError#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#emailValueChange#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#passwordValueChange#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#confirm_passwordValueChange#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#comparePasswords#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#nomValueChange#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#prenomValueChange#0;n#SigninPage#0" expanded="false" />
-            <element signature="n#!!block;n#rememberMeValueChange#0;n#SigninPage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/javascript/bundles/App/components/home/HomePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
