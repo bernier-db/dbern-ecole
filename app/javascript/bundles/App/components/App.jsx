@@ -4,7 +4,6 @@ import NavBar from "./common/NavBar";
 import Breadcrumb from "./common/Breadcrumb";
 
 var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
 
 class App extends React.Component {
     constructor(props) {
@@ -20,6 +19,8 @@ class App extends React.Component {
             loaded: false
         };
         this.logout = this.logout.bind(this);
+        this.setUser = this.setUser.bind(this);
+        this.redirect =this.redirect.bind(this);
     }
 
     componentWillMount() {
@@ -29,8 +30,6 @@ class App extends React.Component {
                 xhr.setRequestHeader('X-CSRF-Token', auth)
             },
             success: function (data) {
-                console.log(data);
-
                 this.setState({
                     isLogged: data.signed_in,
                     user: {
@@ -55,7 +54,6 @@ class App extends React.Component {
             url: "/users/sign_out",
             data:{authenticity_token: auth},
             success: function (res) {
-                console.debug('App - logout', res);
                 this.setState({
                     isLogged: false,
                     user: {
@@ -65,20 +63,20 @@ class App extends React.Component {
                         email: null
                     },
                 });
+                this.redirect("/sign_in");
             }.bind(this)
         });
     }
 
-    setUser(state) {
+    setUser(state, callback) {
         this.setState({
             user: state.user,
             isLogged: state.isLogged
-        })
+        }, callback)
     }
 
     render() {
-        console.log(this.props.routes);
-        let route = this.props.routes[this.props.routes.length - 1].path == undefined ? "" : this.props.routes[this.props.routes.length - 1].path
+        let route = this.props.routes[this.props.routes.length - 1].path === undefined ? "" : this.props.routes[this.props.routes.length - 1].path
         return (
             <div>
                 <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""}
@@ -87,15 +85,16 @@ class App extends React.Component {
                 {this.state.loaded ?
                 <div
                     className="contentPage">
-                    {React.cloneElement(this.props.children,
+                    {
+                        React.cloneElement(this.props.children,
                         {
-                            setSigned_in: this.setUser.bind(this),
+                            setSigned_in: this.setUser,
                             isLogged: this.state.isLogged,
-                            redirect: this.redirect.bind(this),
+                            redirect: this.redirect,
                             user: this.state.user
-                        }
-                    )}
-                </div> : ''}
+                        })
+                    }
+                </div> : 'loading...'}
             </div>
         );
     }

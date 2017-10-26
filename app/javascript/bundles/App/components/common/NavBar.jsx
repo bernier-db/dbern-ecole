@@ -56,6 +56,7 @@ class NavBar extends React.Component {
                                 isLogged={this.props.isLogged}
                                logOut={this.props.logOut}
 
+
                 />
 
 

@@ -21,9 +21,7 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         fetch('/getData').then((res) => {
-            console.log('Fetched : ');
             res.json().then((a) => {
-                console.log(a);
                 this.setState({
                     games: {
                         currentlyPlayed: a.current,
@@ -55,6 +53,8 @@ class HomePage extends React.Component {
     }
 }
 
-HomePage.propTypes = {};
+HomePage.propTypes = {
+
+};
 
 export default HomePage;

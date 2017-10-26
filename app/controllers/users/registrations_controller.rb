@@ -10,14 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(:email => params[:email],
                      :password => params[:password],
                      :password_confirmation => params[:password_confirmation],
-                      :nom => params[:nom],
-                      :prenom => params[:prenom])
+                     :nom => params[:nom],
+                     :prenom => params[:prenom])
 
     if @user.save
-      then
-        sign_in(@user)
-        signed = user_signed_in?
-       render :json => {success: true, user: @user, isLogged: signed}
+    then
+      sign_in(@user)
+      signed = user_signed_in?
+      render :json => {success: true, user: @user, isLogged: signed}
     else
       clean_up_passwords @user
       render :json => {success: false, msg: 'An error happened'}
@@ -25,25 +25,44 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-
     account_update_params = devise_parameter_sanitizer.sanitize(:update_user)
-
+    password = true;
+    message = "Info"
+    @user = User.find(current_user.id)
+    byebug
     # required for settings form to submit when password is left blank
     if account_update_params[:password].blank?
+      password = false;
       account_update_params.delete("password")
       account_update_params.delete("password_confirmation")
+
+      @update = update_resource(@user, account_update_params)
+    else
+      if not @user.valid_password?(params[:user][:current_password])
+        render :json => {ok: false, msg: "Error in your current password"}
+        return
+      end
+
+      if account_update_params[:password] != account_update_params[:password_confirmation]
+        render :json => {ok: false, msg: "New password and confirmation are not te same!"}
+        return
+      else
+        @user.password = account_update_params[:password]
+
+        @update = @user.save
+        message = "Password"
+      end
+
     end
 
-    @user = User.find(current_user.id)
-
-    @update = update_resource(@user, account_update_params)
 
     if @update
       # Sign in the user bypassing validation in case their password changed
       bypass_sign_in(@user)
-      render :json=>{ok: true, user: current_user, msg: "Info updated!"}
+
+      render :json => {ok: true, user: current_user, msg: "#{message} updated!"}
     else
-      render :json=>{ok:false, msg: 'Error updating'}
+      render :json => {ok: false, msg: 'Error updating'}
     end
   end
 
@@ -57,10 +76,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # If you have extra params to permit, append them to the sanitizer.
-   def configure_account_update_params
+  def configure_account_update_params
 
-     devise_parameter_sanitizer.permit(:update_user, keys:[:email, :password, :password_confirmation, :current_password, :prenom, :nom])
-   end
+    devise_parameter_sanitizer.permit(:update_user, keys: [:email, :password, :password_confirmation, :current_password, :prenom, :nom])
+  end
 
   def update_resource(resource, params)
     resource.update_without_password(params)

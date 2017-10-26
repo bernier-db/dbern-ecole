@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
+  root to: 'main#index'
 
-  get 'hello_world', to: 'hello_world#index'
   devise_for :users, controllers: {
       sessions: 'users/sessions',
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      passwords: 'users/passwords'
   }
 
   post '/users/sign_in', to: 'users/sessions#create'
   delete '/users/sign_out', to: 'users/sessions#destroy'
+  delete '/users/sign_out', to: 'users/sessions#destroy'
+  # patch '/users/password', to: 'users/passwords#update'
+  # put '/users/password', to: 'users/passwords#update'
 
 
   get '/auth/is_signed_in', to: 'main#is_signed_in'
@@ -32,8 +36,6 @@ Rails.application.routes.draw do
 
   #stats
   get '/stats/getMyStats', to: 'stats#getStats'
-  root to: 'main#index'
-
 
   #game
   get '/games', to: 'main#index'

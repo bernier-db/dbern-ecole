@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 class SigninPage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             email: "",
             password: "",
@@ -16,10 +17,17 @@ class SigninPage extends React.Component {
             displayMessage: false,
             messageType: "",
             message: "",
-            submitted: false
+            submitted: false,
+            readyToRedirect: false
         };
         this.login = this.login.bind(this);
         this.register = this.register.bind(this);
+        this.displayError = this.displayError.bind(this);
+    }
+
+    componentDidUpdate(){
+        if(this.state.readyToRedirect)
+            this.props.redirect('/');
     }
 
     login(e) {
@@ -36,15 +44,17 @@ class SigninPage extends React.Component {
                 password: this.state.password,
                 remember_me: this.state.remember_me
             },
-            success: function (res) {
-                this.setState({submitted: true});
+            success: this.onLoginSuccess.bind(this)
+        });
+    }
+
+    onLoginSuccess(res) {
+        this.setState({submitted: true},
+            () => {
                 if (!res.ok) {
                     this.displayError(res.msg);
                 }
                 else {
-                    this.setState({
-                        displayMessage: false
-                    });
                     this.props.setSigned_in({
                         isLogged: true,
                         user: {
@@ -53,10 +63,8 @@ class SigninPage extends React.Component {
                             email: res.user.email
                         }
                     });
-                    this.props.redirect('/');
                 }
-            }.bind(this)
-        });
+            });
     }
 
     register(e) {
@@ -168,7 +176,8 @@ class SigninPage extends React.Component {
         return (
             <div className="loginPage">
 
-                <div className={"message " + this.state.messageType + (this.state.displayMessage ? ' active' : '')}>{this.state.message}</div>
+                <div
+                    className={"message " + this.state.messageType + (this.state.displayMessage ? ' active' : '')}>{this.state.message}</div>
 
                 <form className="green" onSubmit={this.login}>
                     <h3>Login</h3>
@@ -192,7 +201,8 @@ class SigninPage extends React.Component {
                            onChange={this.passwordValueChange.bind(this)}
                            required/>
                     <input type="password" placeholder="Confirm password" name="confirm_password"
-                           value={this.state.confirm_password} onBlur={this.comparePasswords.bind(this)} onChange={this.confirm_passwordValueChange.bind(this)}
+                           value={this.state.confirm_password} onBlur={this.comparePasswords.bind(this)}
+                           onChange={this.confirm_passwordValueChange.bind(this)}
                            required/>
 
                     <input type="submit" value="Register" disabled={this.state.submitted}/>
@@ -203,9 +213,9 @@ class SigninPage extends React.Component {
 }
 
 SigninPage.propTypes = {
-    setSigned_in: PropTypes.func.isRequired,
-    isLogged: PropTypes.bool.isRequired,
-    redirect: PropTypes.func.isRequired
+    setSigned_in: PropTypes.func,
+    isLogged: PropTypes.bool,
+    redirect: PropTypes.func,
 };
 
 export default SigninPage;
