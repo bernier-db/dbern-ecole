@@ -12,11 +12,15 @@ class FriendsPage extends React.Component {
             loaded: false,
             friends: [],
             requests: [],
-            emailSearch: ''
+            emailSearch: '',
+            sendMessage: '',
+            sendDisplay: false,
+            sendType: '',
+            sendReqSent: false,
         };
         this.newRequest = this.newRequest.bind(this);
         this.onEmailChange = this.onEmailChange.bind(this);
-        this.submitForm = this.submitForm.bind(this);
+        this.deleteFriendship = this.deleteFriendship.bind(this);
     }
 
     componentWillMount() {
@@ -46,30 +50,31 @@ class FriendsPage extends React.Component {
             console.log("is disabled");
         else {
 
-            const but =  $(e.target);
+            const but = $(e.target);
             but.siblings().addClass('disabled');
             but.addClass('disabled');
             $.ajax({
                 method: "POST",
                 url: "/friends/answerRequest",
                 beforeSend: function (xhr) {
-                    xhr.setRequestHeader('X-CSRF-Token', auth)},
+                    xhr.setRequestHeader('X-CSRF-Token', auth)
+                },
                 data: {
                     answer: answer,
                     id: rel_id
                 },
-                success: (res) =>{
+                success: (res) => {
                     let reqs = JSON.parse(JSON.stringify(this.state.requests));
-                    if (res.ok){
+                    if (res.ok) {
 
                         reqs[idx].accepted = answer;
                         reqs[idx].msg = res.msg;
 
-                        if(answer){
+                        if (answer) {
                             const user = {
-                                nom:  reqs[idx].nom,
-                                prenom:  reqs[idx].prenom,
-                                id:  reqs[idx].id
+                                nom: reqs[idx].nom,
+                                prenom: reqs[idx].prenom,
+                                id: reqs[idx].id
                             }
                             const friends = JSON.parse(JSON.stringify(this.state.friends));
                             friends.push(user);
@@ -86,29 +91,68 @@ class FriendsPage extends React.Component {
         }
     }
 
-    onEmailChange(e){
+    onEmailChange(e) {
         this.setState({emailSearch: e.target.value});
     }
 
-    submitForm(){
-        $('#reqForm').trigger("submit", this.newRequest(e));
-    }
-
-    newRequest(e){
+    newRequest(e) {
         e.preventDefault();
         const data = $(e.target).serializeArray();
         const email = data[0].value;
-
+        this.setState({
+            sendReqSent: true,
+        });
         $.ajax({
             method: "post",
-            url: "",
-            beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-Token', auth)},
-            data:{
+            url: "/friends/newFriendRequest",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', auth)
+            },
+            data: {
                 email: email
             },
-            success:(res){
+            success: (res) => {
+                const value = res.ok ? "" : this.state.emailSearch;
+                this.setState({
+                    sendDisplay: true,
+                    sendMessage: res.msg,
+                    sendType: res.ok ? 'green' : 'red',
+                    sendReqSent: false,
+                    emailSearch: value,
+                });
+            }
+        })
+        ;
+    }
 
+    deleteFriendship(e, rel_id, idx) {
+        if ($(e.target).hasClass('disabled')) {
+            console.debug("Disabled");
+            return;
         }
+        const friends = JSON.parse(JSON.stringify(this.state.friends));
+        friends[idx].disabled = true;
+        this.setState({
+           friends: friends
+        });
+        $.ajax({
+            method: "DELETE",
+            url: "/friends/delete",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', auth)
+            },
+            data: {
+                id: rel_id
+            },
+            success: (res) => {
+                if (res.ok) {
+                    friends[idx].deleted = true;
+
+                    this.setState({
+                        friends: friends
+                    });
+                }
+            }
         });
     }
 
@@ -121,16 +165,32 @@ class FriendsPage extends React.Component {
                             <h2>My friends</h2>
                             <div className="flex rect-section listing">
                                 {this.state.friends.map((friend, idx) => {
+
                                     return (
+                                        friend.deleted ? (
+                                            <div key={idx} className="listing-item padding margin red full-width">
+                                                Friendship deleted
+                                            </div>
+                                        ) :
+                                        (
                                         <div className="listing-item flex padding margin" key={idx}>
                                             <Link to={"/user/" + friend.id} className={"flex align-center"}>
                                                 <ProfileIcon height={"35px"}/>
                                                 <span
-                                                    style={{marginLeft: "20px"}}>{friend.prenom + " " + friend.nom}</span>
+                                                    style={{marginLeft: "20px"}}>
+                                                    {friend.prenom + " " + friend.nom}
+                                                    </span>
                                             </Link>
-                                            <span className="clickable cancelIcon"
-                                                  title="Delete this friend"><CancelIcon/></span>
-                                        </div>)
+                                            <span
+                                                className={"clickable cancelIcon" + (friend.disabled ? ' disabled' : '')}
+                                                title="Delete this friend"
+                                                onClick={(e) => {
+                                                    this.deleteFriendship(e, friend.rel_id, idx)
+                                                }}>
+                                                <CancelIcon/>
+                                            </span>
+                                        </div>
+                                    ))
                                 })}
                             </div>
 
@@ -138,16 +198,32 @@ class FriendsPage extends React.Component {
 
                         <div className={"flex-fixed-400"}>
                             <h2>Add a friend</h2>
-                            <form className={"flex rect-section row"} onSubmit={this.newRequest}>
-                                <input id="reqForm" className={"flex-auto max-w-240"} type="email" value={this.state.emailSearch}
-                                       placeholder="Enter friend's email" name="email" onChange={this.onEmailChange} required/>
-                                <div className="centered-LR">
-                                    <button
-                                    className="btn btn-blue background-color-trans">
-                                        Send
-                                    </button>
+                            <div className="rect-section">
+
+                                <form className={"flex row"} onSubmit={this.newRequest}>
+                                    <input id="reqForm" className={"flex-auto max-w-240"} type="email"
+                                           value={this.state.emailSearch}
+                                           placeholder="Enter friend's email" name="email" onChange={this.onEmailChange}
+                                           required disabled={this.state.sendReqSent}/>
+                                    <div className="centered-LR">
+                                        <button
+                                            className="btn btn-blue background-color-trans">
+                                            Send
+                                        </button>
+                                    </div>
+
+                                </form>
+                                {this.state.sendDisplay &&
+                                <div style={{margin: "5px 0", padding: '5px'}}
+                                     title="Click to close"
+                                     className={"clickable full-width " + this.state.sendType}
+                                     onClick={() => {
+                                         this.setState({sendDisplay: false});
+                                     }}>
+                                    {this.state.sendMessage}
                                 </div>
-                            </form>
+                                }
+                            </div>
 
                             <div className="margin-top-30">
                                 <h2>Received requests</h2>
@@ -169,7 +245,8 @@ class FriendsPage extends React.Component {
                                             </div>)
                                         else {
                                             return (
-                                                <div className={"listing-item" + (req.accepted ? " green" : " red")} key={idx} onClick={(e)=>$(e.target).hide()}>
+                                                <div className={"listing-item" + (req.accepted ? " green" : " red")}
+                                                     key={idx} onClick={(e) => $(e.target).hide()}>
                                                     Request {req.accepted ? " accepted" : " declined"}
                                                 </div>
                                             )

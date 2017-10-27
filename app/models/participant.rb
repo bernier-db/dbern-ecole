@@ -1,13 +1,11 @@
 class Participant < ApplicationRecord
 
-
   belongs_to :game
   belongs_to :owner, :class_name => 'User', :foreign_key => :owner_id
   belongs_to :opponent, :class_name => 'User', :foreign_key => :opponent_id, optional: true
   belongs_to :winner, :class_name => 'User', :foreign_key => :winner_id, optional: true
 
   validates :owner_id, presence: true
-
 
 #Participant.getStats(User.find(1))
   def self.getStats(user)
@@ -36,6 +34,4 @@ class Participant < ApplicationRecord
   def self.isPlaying(user_id, game_id)
     Participant.where("game_id = #{game_id} AND status <> 'ended' AND (owner_id = #{user_id} OR opponent_id = #{user_id})").first;
   end
-
-
 end

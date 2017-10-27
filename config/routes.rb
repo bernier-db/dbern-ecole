@@ -20,12 +20,13 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  #Because of React-router ###########
-  get '/getData', to: 'main#getData'
+  #Because of React-router ############
+  get '/getData', to: 'main#getData' #(home page data)
   get '/home', to: 'main#index'
   get '/profile', to: 'main#index'
   get '/sign_in', to: 'main#index'
   get '/friends', to: 'main#index'
+  get '/games', to: 'main#index'
   #####################################
 
   #friendships
@@ -34,11 +35,14 @@ Rails.application.routes.draw do
   post '/friends/answerRequest', to: 'friendship#answerRequest'
   delete '/friends/delete', to: 'friendship#delete'
 
+  #users
+  get '/users/getUserInfo/:id', to: 'main#getUserInfo'
+
   #stats
   get '/stats/getMyStats', to: 'stats#getStats'
 
   #game
-  get '/games', to: 'main#index'
+  get '/games/getAllGames', to: 'game#getAllgames'
   get '/games/:id', to: 'game#get'
   get '/games/:id/play', to: 'game#play'
   post '/games/:joust_id/win', to: 'game#win'

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router';
 
 const GameList = (props) => {
-    console.log(props);
-
     return (
         <div className="gameList">
         <h1>Currently played</h1>

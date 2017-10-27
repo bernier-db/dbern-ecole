@@ -5,7 +5,8 @@ class Relationship < ApplicationRecord
   validates :friend_id, presence: true
 
   def self.friendExist?(user_id, friend_id)
-    return (Relationship.where("(user_id = (?) AND friend_id = (?)) OR (user_id = (?) AND friend_id = (?))", user_id,friend_id,friend_id,user_id).count > 0)
+    exist = (Relationship.where("(user_id = (?) AND friend_id = (?)) OR (user_id = (?) AND friend_id = (?))", user_id,friend_id,friend_id,user_id).count > 0)
+    return exist
   end
 
 end

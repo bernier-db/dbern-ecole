@@ -10,6 +10,7 @@ export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={HomePage} />
 		<Route path="games" component={GamesPage} />
+		<Route path="games/:id" component={GamesPage} />
 		<Route path="home" component={HomePage} />
 		<Route path="profile" component={ProfilePage} />
 		<Route path="friends" component={FriendsPage} />

@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -12,19 +10,17 @@ class User < ApplicationRecord
   has_many :inverse_friends, :through => :inverse_relationships, :source => :user
 
   def self.allFriends(id)
-    User.find(id).friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*") + User.find(id).inverse_friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*")
+    User.find(id).friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*") +
+        User.find(id).inverse_friends.where("relationships.status = 'accepted'").select("relationships.id as rel_id, users.*")
   end
 
-  def self. PendingRecRequests(id)
+  def self.PendingRecRequests(id)
     User.find(id).inverse_friends.where("relationships.status = 'waiting'").select("relationships.id as rel_id, users.*")
 
   end
   def self.PendingSendRequests(id)
     User.find(id).friends.where("relationships.status = 'waiting'").select("relationships.id as rel_id, users.*")
   end
-
-
-
 
 #Relations pour les parties jouées
   has_many :won_games, :class_name => "Participant", :foreign_key => "winner_id"
@@ -38,6 +34,4 @@ class User < ApplicationRecord
   def self.played_games
     Game.joins("inner join participants on games.id = game_id").where("opponent_id = ? OR winner_id = ?", self.id, self.id).distinct
   end
-
-
 end

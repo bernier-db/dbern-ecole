@@ -47,7 +47,7 @@ class HeaderProfile extends React.Component {
             <div className="profileButton" onClick={this.props.isLogged ? this.props.toggleActive : () => {
             }}>
                 <ProfileIcon/>
-                <Link to="sign_in">
+                <Link className="loginLink" to="sign_in">
                     <div className="headerText">Login/Register</div>
                 </Link>
             </div>;
