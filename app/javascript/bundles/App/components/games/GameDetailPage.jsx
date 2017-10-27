@@ -15,6 +15,8 @@ class GameDetailPage extends React.Component {
 
 
     componentWillMount() {
+        if (this.props.checkIfHasGame())
+            return;
         const game_id = this.props.params.id;
         $.ajax({
             method: "get",

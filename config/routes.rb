@@ -16,12 +16,11 @@ Rails.application.routes.draw do
 
 
   get '/auth/is_signed_in', to: 'main#is_signed_in'
-
-
+  get '/getData', to: 'main#getData' #(home page data)
+  get '/hasGame', to: 'main#hasGames'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #Because of React-router ############
-  get '/getData', to: 'main#getData' #(home page data)
   get '/home', to: 'main#index'
   get '/profile', to: 'main#index'
   get '/sign_in', to: 'main#index'
@@ -30,6 +29,8 @@ Rails.application.routes.draw do
   get '/games/infos/:id', to: 'main#index'
   get '/games/play/:id', to: 'main#index'
   #####################################
+
+
 
   #friendships
   get '/friends/getMyFriends', to: 'friendship#FetchFriends'
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
   get '/games/details/:id', to: 'game#get'
   post '/games/play/start/:id', to: 'game#play'
   post '/games/win/:joust_id', to: 'game#win'
+  post '/games/forfeit/:joust_id', to: 'game#forfeit'
 
 
 end

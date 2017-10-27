@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :getUserInfo_params, only: :getUserInfo
+  before_action :getUserInfo_params, only: [:getUserInfo]
 
   def index
   render 'home/index.html.erb'
@@ -20,6 +20,13 @@ class MainController < ApplicationController
     else
       render :json => {"signed_in" => false}
     end
+  end
+
+  def hasGames
+    user_id = current_user.id
+
+    game = Participant.isPlaying(user_id, nil)
+    render :json =>{ok: true, game: game}
   end
 
 

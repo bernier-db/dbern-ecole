@@ -4,12 +4,15 @@ import {Link} from 'react-router'
 class GamesPage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             games: []
         }
     }
 
     componentWillMount() {
+        if (this.props.checkIfHasGame())
+            return;
         $.ajax({
             method: "get",
             url: "/games/getAllGames",

@@ -8,6 +8,7 @@ import CancelIcon from "../common/CancelIcon";
 class FriendsPage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             loaded: false,
             friends: [],
@@ -24,9 +25,12 @@ class FriendsPage extends React.Component {
     }
 
     componentWillMount() {
+
         if (!this.props.isLogged) {
             this.props.redirect('/sign_in');
         } else
+        if (this.props.checkIfHasGame())
+            return;
         //Fetch actual friends
             $.ajax({
                 method: "GET",

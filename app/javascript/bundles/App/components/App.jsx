@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import NavBar from "./common/NavBar";
 import Breadcrumb from "./common/Breadcrumb";
+import GamePlayingPage from "./games/GamePlayingPage";
 
 var Router = require('react-router');
 
@@ -16,11 +17,15 @@ class App extends React.Component {
                 prenom: null,
                 email: null
             },
-            loaded: false
+            loaded: false,
+            hasPendingGame: false,
         };
         this.logout = this.logout.bind(this);
         this.setUser = this.setUser.bind(this);
-        this.redirect =this.redirect.bind(this);
+        this.redirect = this.redirect.bind(this);
+        this.hasGame = this.hasGame.bind(this);
+        this.checkIfHasGame = this.checkIfHasGame.bind(this);
+        this.resetHasGame = this.resetHasGame.bind(this);
     }
 
     componentWillMount() {
@@ -39,12 +44,44 @@ class App extends React.Component {
                         id: data.signed_in ? data.user.id : null
                     },
                     loaded: true
-                });
+                }, this.hasGame());
             }.bind(this)
         });
     }
 
-    redirect(path){
+    hasGame(callback) {
+        $.ajax({
+            method: "GET",
+            url: "/hasGame",
+            success: (res) => {
+                if (res.ok) {
+                    const hasGames = (res.game != null);
+                    this.setState({
+                        hasPendingGame: hasGames,
+                        gamePendingId: hasGames ? res.game.game_id : null,
+                    }, callback);
+                }
+            }
+        });
+    }
+
+    checkIfHasGame() {
+
+        this.hasGame(() => {
+            if (this.state.hasPendingGame) {
+                this.redirect("/games/play/" + this.state.gamePendingId);
+                return true;
+            }
+        });
+    }
+
+    resetHasGame(){
+        this.setState({
+            hasPendingGame: false,
+            gamePendingId: null,
+        });
+    }
+    redirect(path) {
         Router.browserHistory.push(path);
     }
 
@@ -52,7 +89,7 @@ class App extends React.Component {
         $.ajax({
             method: "DELETE",
             url: "/users/sign_out",
-            data:{authenticity_token: auth},
+            data: {authenticity_token: auth},
             success: function (res) {
                 this.setState({
                     isLogged: false,
@@ -82,20 +119,23 @@ class App extends React.Component {
                 <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""}
                         isLogged={this.state.isLogged}/>
                 <Breadcrumb route={route} params={this.props.params}/>
-                {this.state.loaded ?
-                <div
-                    className="contentPage">
-                    {
-                        React.cloneElement(this.props.children,
-                        {
-                            setSigned_in: this.setUser,
-                            isLogged: this.state.isLogged,
-                            redirect: this.redirect,
-                            user: this.state.user,
-                            router: this.props.router,
-                        })
-                    }
-                </div> : 'loading...'}
+                {
+                    this.state.loaded ?
+                        <div
+                            className="contentPage">
+                            {
+                                React.cloneElement(this.props.children,
+                                    {
+                                        setSigned_in: this.setUser,
+                                        isLogged: this.state.isLogged,
+                                        redirect: this.redirect,
+                                        user: this.state.user,
+                                        router: this.props.router,
+                                        checkIfHasGame: this.checkIfHasGame,
+                                        forfeited: this.resetHasGAme,
+                                    })
+                            }
+                        </div> : 'loading...'}
             </div>
         );
     }

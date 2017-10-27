@@ -9,6 +9,7 @@ import GameList from "./GameList";
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             games: {
                 latest: [],
@@ -20,6 +21,8 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
+        if (this.props.checkIfHasGame())
+            return;
         fetch('/getData').then((res) => {
             res.json().then((a) => {
                 this.setState({

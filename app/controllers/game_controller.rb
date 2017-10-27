@@ -25,14 +25,18 @@ class GameController < ApplicationController
 ########### join or host###########
 #POST /games/play/start:id
   def play
+
     game_id = params[:id]
     user_id = current_user.id
 #already playing
     if (!(playing = Participant.isPlaying(user_id, game_id)).blank?)
       otherPlayer = playing.owner_id === user_id ? playing.opponent_id : playing.owner_id
-      owner = User.find(otherPlayer)
-
-      render :json => {ok:true, state: "already playing", data: playing, opponent: owner}
+      if otherPlayer != nil
+        other = User.find(otherPlayer)
+      else
+        other = nil
+      end
+      render :json => {ok: true, state: "already playing", data: playing, opponent: other}
       return
     end
 
@@ -59,7 +63,7 @@ class GameController < ApplicationController
         render :json => {ok: true, state: 'hosting', data: joust}
         return
       end
-      render :json => {ok:false}
+      render :json => {ok: false}
     end
   end
 
@@ -84,7 +88,7 @@ class GameController < ApplicationController
     return
   end
 
-#POST /game/:joust_id/forfeit
+#POST /games/forfeit/:joust_id
   def forfeit
     joust_id = params[:joust_id]
     user_id = current_user.id
@@ -95,13 +99,13 @@ class GameController < ApplicationController
       return head :unauthorized
     end
 
-    winner = joust.owner_id === user_id ? joust.owner_id : joust.opponent_id
+    winner = joust.owner_id === user_id ? joust.opponent_id : joust.owner_id
 
     joust.winner_id = winner
     joust.status = 'ended'
     joust.save!
 
-    render :json => {state: 'forfeited', data: joust}
+    render :json => {ok: true, state: 'forfeited', data: joust}
   end
 
 

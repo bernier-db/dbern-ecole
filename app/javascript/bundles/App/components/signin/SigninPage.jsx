@@ -50,14 +50,18 @@ class SigninPage extends React.Component {
                 }
                 else {
                     this.props.setSigned_in({
-                        isLogged: true,
-                        user: {
-                            prenom: res.user.prenom,
-                            nom: res.user.nom,
-                            email: res.user.email
+                            isLogged: true,
+                            user: {
+                                prenom: res.user.prenom,
+                                nom: res.user.nom,
+                                email: res.user.email
+                            }
+                        }, () => {
+                            if (!this.props.checkIfHasGame()) {
+                                this.props.redirect('/home');
+                            }
                         }
-                    });
-                    this.props.redirect('/home');
+                    );
                 }
             });
     }
@@ -170,7 +174,6 @@ class SigninPage extends React.Component {
 
         return (
             <div className="loginPage">
-
 
 
                 <form className="green" onSubmit={this.login}>

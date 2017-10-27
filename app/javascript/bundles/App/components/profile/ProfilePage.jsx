@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props);
+
         if(!this.props.isLogged)
             this.props.redirect('/sign_in');
 
@@ -42,6 +43,8 @@ class ProfilePage extends React.Component {
     }
 
     componentWillMount() {
+        if (this.props.checkIfHasGame())
+            return;
         $.ajax({
             method: "GET",
             url: '/stats/getMyStats',
