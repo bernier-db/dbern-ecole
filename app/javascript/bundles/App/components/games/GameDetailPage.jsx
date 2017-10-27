@@ -31,9 +31,10 @@ class GameDetailPage extends React.Component {
         });
     }
 
+
     render() {
         return (this.state.loading ? 'loading...' : (
-                <div className="flex space-between">
+                <div className="flex">
                     <div className="flex-fixed-400">
 
                         <h2 style={{marginBottom: '5px'}}>{this.state.game.title}</h2>
@@ -49,23 +50,33 @@ class GameDetailPage extends React.Component {
                             {this.state.game.description}
                         </div>
                     </div>
-                    {this.state.players.length > 0 &&
-                    <div className="flex-fixed-400">
-                        <h2>Currently playing ({this.state.players.length})</h2>
-                        <div className="rect-section listing">
-                            {this.state.players.map((pl, idx)=>{
-                            return (
-                            <div key={idx} className="listing-item">
-                            <Link className="link" to={'/users/' + pl.id}>{pl.prenom + ' ' + pl.nom}</Link>
-                            </div>
-                            );
-                        })}
-                        </div>
-                    </div>}
 
                     <div className="flex-fixed-400">
-                    PLAY {this.state.game.title}
+                        {this.state.players.length > 0 &&
+                        <h2>Currently playing ({this.state.players.length})</h2>}
+                    {this.state.players.length > 0 &&
+                        <div className="rect-section listing">
+                            {this.state.players.map((pl, idx) => {
+                                return (
+                                    <div key={idx} className="listing-item">
+                                        <Link className="link" to={'/users/' + pl.id}>{pl.prenom + ' ' + pl.nom}</Link>
+                                    </div>
+                                );
+                            })}
+                        </div>}
+
+                        {this.props.isLogged ? (
+                            <button className="play clickable" onClick={() => {
+                                this.props.redirect("/games/play/" + this.state.game.id)
+                            }}>Play {this.state.game.title} now!</button>
+                        ) : (
+                            <button className="play clickable" onClick={() => {
+                                this.props.redirect("/sign_in")
+                            }}>Login to play</button>
+                        )}
                     </div>
+
+
                 </div>
             )
         );

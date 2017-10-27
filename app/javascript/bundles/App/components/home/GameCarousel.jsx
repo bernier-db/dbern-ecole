@@ -16,11 +16,11 @@ class GameCarousel extends React.Component {
                             <div className="singleGame" key={idx}>
                                 <div className="imgContainer">
                                     <img src={'/assets/' + g.image}/>
-                                    <div className="imgHover">Play</div>
+                                    <Link to={"/games/infos/" + g.id}> <div className="imgHover">Play</div></Link>
                                 </div>
 
                                 <div className="gameName">
-                                    <Link to={"/games/infos/" + g.id}>{g.title}</Link>
+                                    <Link className={"link"} to={"/games/infos/" + g.id}>{g.title}</Link>
                                 </div>
                             </div>);
 

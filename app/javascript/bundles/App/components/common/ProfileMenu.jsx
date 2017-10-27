@@ -20,8 +20,8 @@ class ProfileMenu extends React.Component {
 
         return (
             <div className={"profileMenu" + active} onClick={this.clicked}>
-                <Link className="menuItem" to={"profile"} activeClassName={""}>Profile</Link>
-                <Link className="menuItem" to={"friends"} activeClassName={""}>Friends</Link>
+                <Link className="menuItem" to={"/profile"} activeClassName={""}>Profile</Link>
+                <Link className="menuItem" to={"/friends"} activeClassName={""}>Friends</Link>
                 <div className="menuItem" onClick={this.props.logOut}>Logout</div>
             </div>
         );

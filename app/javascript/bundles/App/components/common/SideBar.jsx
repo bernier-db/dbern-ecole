@@ -14,7 +14,7 @@ const SideBar = (props) => {
     return (
         <div className={"sideBar" + active} onClick={click}>
             <Link className="menuItem" to={"/home"} activeClassName="activeSideLink">Home</Link>
-            <Link className="menuItem" to={"games"} activeClassName="activeSideLink">Games</Link>
+            <Link className="menuItem" to={"/games"} activeClassName="activeSideLink">Games</Link>
             <div className="separator"></div>
             {props.isLogged && <div>
                 <Link className="menuItem ifLogged" to={"/profile"} activeClassName="activeSideLink">Profile</Link>
@@ -23,7 +23,7 @@ const SideBar = (props) => {
                 <div className="menuItem sideLog" onClick={props.logOut}>Log out</div>
             </div>}
             {!props.isLogged &&
-            <Link className="menuItem" to="sign_in" activeClassName="activeSideLink">Register/Login</Link>}
+            <Link className="menuItem" to="/sign_in" activeClassName="activeSideLink">Register/Login</Link>}
 
         </div>
     );

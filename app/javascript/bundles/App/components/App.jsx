@@ -91,7 +91,8 @@ class App extends React.Component {
                             setSigned_in: this.setUser,
                             isLogged: this.state.isLogged,
                             redirect: this.redirect,
-                            user: this.state.user
+                            user: this.state.user,
+                            router: this.props.router,
                         })
                     }
                 </div> : 'loading...'}

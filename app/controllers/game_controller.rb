@@ -23,20 +23,22 @@ class GameController < ApplicationController
 
 
 ########### join or host###########
-#POST /games/:id/play
+#POST /games/play/start:id
   def play
     game_id = params[:id]
     user_id = current_user.id
-
+#already playing
     if (!(playing = Participant.isPlaying(user_id, game_id)).blank?)
+      otherPlayer = playing.owner_id === user_id ? playing.opponent_id : playing.owner_id
+      owner = User.find(otherPlayer)
 
-      render :json => {state: "already playing", data: playing}
+      render :json => {ok:true, state: "already playing", data: playing, opponent: owner}
       return
     end
 
     openedGames = Participant.WaitingForOpponent(game_id)
-
-    if (openedGames.count > 0)
+#join
+    if openedGames.count > 0
       game = openedGames[0]
 
 
@@ -45,14 +47,19 @@ class GameController < ApplicationController
       game.waiting_for_user_id = game.owner_id
 
       game.save
-      render :json => {state: 'joining', data: openedGames[0]}
-      return
 
+      owner = User.find(game.owner_id)
+      render :json => {ok: true, state: 'joining', data: openedGames[0], opponent: owner}
+      return
+#host
     else
       joust = Participant.new({status: 'waiting', owner_id: user_id, game_id: game_id, game_data: {}})
-      joust.save!
-      render :json => {state: "hosting", data: joust}
-      return
+      if joust.save!
+
+        render :json => {ok: true, state: 'hosting', data: joust}
+        return
+      end
+      render :json => {ok:false}
     end
   end
 
@@ -75,6 +82,26 @@ class GameController < ApplicationController
 
     render :json => {state: 'won', data: joust}
     return
+  end
+
+#POST /game/:joust_id/forfeit
+  def forfeit
+    joust_id = params[:joust_id]
+    user_id = current_user.id
+
+    joust = Participant.find(joust_id);
+
+    if (joust.owner_id != user_id && joust.opponent_id != user_id)
+      return head :unauthorized
+    end
+
+    winner = joust.owner_id === user_id ? joust.owner_id : joust.opponent_id
+
+    joust.winner_id = winner
+    joust.status = 'ended'
+    joust.save!
+
+    render :json => {state: 'forfeited', data: joust}
   end
 
 

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create(title: :MemoDeck, description: "A game where you have to remember every moves you and tour opponnent made before seeing it happen!", image: "memoDec", );
+Game.create(title: :MemoDeck, description: "A game where you have to remember every moves you and tour opponent made before seeing it happen!", image: "memoDec", );
 Game.create(title: :TicTacToe, description: "An unbeatable classic game. Strategy at its best!", image: "tictactoe.png");
 Game.create(title: :Games3, description: "bla blablablablabalbalbalbalablablablabla", image: "default.jpg");
 

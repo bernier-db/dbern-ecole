@@ -320,6 +320,22 @@ input[type="email"], input[type="text"],input[type="password"] {
     -o-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
 }
+button.play{
+
+}
+button.play:hover {
+    box-shadow: 0px 0px 11px #424242;
+}
+
+button.play {
+    background-color: #5a5;
+    border: 1px solid green;
+    padding: 10px 20px;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+}
 
 .headerProfile span {
     margin: 0 20px;
@@ -874,4 +890,10 @@ h2 {
     border-bottom: 1px solid;
     font-weight: bold;
     font-size: 20px;
+}
+.playGameContainer canvas{
+    width:700px;
+    height:400px;
+    background-color: #fff;
+    border: 1px solid black;
 }
