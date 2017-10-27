@@ -168,7 +168,7 @@ class FriendsPage extends React.Component {
 
                                     return (
                                         friend.deleted ? (
-                                            <div key={idx} className="listing-item padding margin red full-width">
+                                            <div key={idx} className="listing-item margin message red full-width">
                                                 Friendship deleted
                                             </div>
                                         ) :
@@ -213,16 +213,16 @@ class FriendsPage extends React.Component {
                                     </div>
 
                                 </form>
-                                {this.state.sendDisplay &&
+
                                 <div style={{margin: "5px 0", padding: '5px'}}
                                      title="Click to close"
-                                     className={"clickable full-width " + this.state.sendType}
+                                     className={"clickable message " + this.state.sendType + (this.state.sendDisplay ? " active" : "")}
                                      onClick={() => {
                                          this.setState({sendDisplay: false});
                                      }}>
                                     {this.state.sendMessage}
                                 </div>
-                                }
+
                             </div>
 
                             <div className="margin-top-30">

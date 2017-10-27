@@ -47,7 +47,7 @@ class GamesPage extends React.Component {
                     <div className={"index-section flex column flex-fixed-400"} key={idx1}>
                         <div className="index">{section.index}</div>
                         {section.games.map((g, idx2) => {
-                            return (<Link to={"/games/" + g.id} className={"game-title link"} key={idx2}>{g.title}</Link>);
+                            return (<Link to={"/games/infos/" + g.id} className={"game-title link"} key={idx2}>{g.title}</Link>);
                         })}
                     </div>
                 );

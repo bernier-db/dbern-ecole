@@ -7,7 +7,7 @@ class Game < ApplicationRecord
   end
 
   def self.latest(limit)
-    Game.from("(SELECT title, id, image FROM games ORDER BY created_at DESC)as games").group(:id).limit(limit)
+    Game.order("created_at desc").limit(limit).select("title, id, image")
   end
 
   def self.mostPopular(limit)

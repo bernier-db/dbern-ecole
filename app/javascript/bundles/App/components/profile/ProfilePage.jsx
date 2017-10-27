@@ -264,7 +264,7 @@ class ProfilePage extends React.Component {
                                     return (
                                         <div className="listing-item" key={idx}>
                                             <div>
-                                                <Link to={"/games/" + stat.id} className="link">{stat.title}</Link>
+                                                <Link to={"/games/infos/" + stat.id} className="link">{stat.title}</Link>
                                             </div>
                                             <div>{stat.won}/{stat.total - stat.won}</div>
                                         </div>

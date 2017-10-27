@@ -34,4 +34,6 @@ class Participant < ApplicationRecord
   def self.isPlaying(user_id, game_id)
     Participant.where("game_id = #{game_id} AND status <> 'ended' AND (owner_id = #{user_id} OR opponent_id = #{user_id})").first;
   end
+
+
 end

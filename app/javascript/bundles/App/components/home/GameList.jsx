@@ -8,7 +8,7 @@ const GameList = (props) => {
         <h1>Currently played</h1>
             <div className="list">
             {props.games.length > 0 ? (props.games.map((g, idx)=>{
-                return <Link className="link" to={"/games/" + g.id} key={idx}>{g.title}</Link>
+                return <Link className="link" to={"/games/infos/" + g.id} key={idx}>{g.title}</Link>
             }))
             : ''}
             </div>

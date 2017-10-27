@@ -4,13 +4,14 @@ class GameController < ApplicationController
 
   before_action :authenticate_user, except: [:get, :getAllgames]
 
-#GET /games/:id
+#GET
   def get
     id = params[:id]
     game = Game.getSimpleInfosById(id)
+    players = User.getPlayersByGame(id)
 
 
-    render :json => {ok: true, data: game}
+    render :json => {ok: true, data: game, players: players}
   end
 
 #/games/getAllGames
@@ -53,7 +54,6 @@ class GameController < ApplicationController
       render :json => {state: "hosting", data: joust}
       return
     end
-
   end
 
 

@@ -20,7 +20,7 @@ class GameCarousel extends React.Component {
                                 </div>
 
                                 <div className="gameName">
-                                    <Link to={"/games/" + g.id}>{g.title}</Link>
+                                    <Link to={"/games/infos/" + g.id}>{g.title}</Link>
                                 </div>
                             </div>);
 

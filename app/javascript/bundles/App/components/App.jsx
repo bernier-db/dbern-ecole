@@ -25,7 +25,7 @@ class App extends React.Component {
 
     componentWillMount() {
         $.ajax({
-            url: 'auth/is_signed_in',
+            url: '/auth/is_signed_in',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('X-CSRF-Token', auth)
             },
@@ -81,7 +81,7 @@ class App extends React.Component {
             <div>
                 <NavBar logOut={this.logout} className="menuIcon" userName={this.state.user.prenom || ""}
                         isLogged={this.state.isLogged}/>
-                <Breadcrumb route={route}/>
+                <Breadcrumb route={route} params={this.props.params}/>
                 {this.state.loaded ?
                 <div
                     className="contentPage">

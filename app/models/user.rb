@@ -34,4 +34,10 @@ class User < ApplicationRecord
   def self.played_games
     Game.joins("inner join participants on games.id = game_id").where("opponent_id = ? OR winner_id = ?", self.id, self.id).distinct
   end
+
+  def self.getPlayersByGame(game_id)
+    User.joins("inner join participants on (users.id = participants.owner_id OR users.id = opponent_id)").where("game_id = ? AND status != 'ended'", game_id).select("nom, prenom, users.id")
+  end
+
+
 end

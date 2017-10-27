@@ -1,13 +1,14 @@
 class MainController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :getUserInfo_params, only: :getUserInfo
+
   def index
   render 'home/index.html.erb'
   end
 
   def getData
-    @latest = Game.latest(5)
-    @popular = Game.mostPopular(5)
+    @latest = Game.latest(3)
+    @popular = Game.mostPopular(3)
     @current = Game.currentlyPlayed(5)
     render :json => {latest: @latest, popular: @popular, current: @current}
   end

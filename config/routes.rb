@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'main#index'
   get '/friends', to: 'main#index'
   get '/games', to: 'main#index'
+  get '/games/infos/:id', to: 'main#index'
   #####################################
 
   #friendships
@@ -43,9 +44,9 @@ Rails.application.routes.draw do
 
   #game
   get '/games/getAllGames', to: 'game#getAllgames'
-  get '/games/:id', to: 'game#get'
-  get '/games/:id/play', to: 'game#play'
-  post '/games/:joust_id/win', to: 'game#win'
+  get '/games/details/:id', to: 'game#get'
+  get '/games/play/:id', to: 'game#play'
+  post '/games/win/:joust_id', to: 'game#win'
 
 
 end
