@@ -15,25 +15,26 @@ function newRound(e) {
 function playRound(e) {
     var idx = 0;
     game.isAnim = true;
-    game.currentCard = gameData.gameStack[idx];
+    game.currentCard = gameStack[idx];
     var interval = setInterval(function () {
         
         if (game.mover[0].isAtDestination && game.mover[1].isAtDestination) {
 
-            if(gameData.gameStack.length > 0 && gameData.gameStack[idx]){
-                var id = gameData.gameStack[idx].playerId;
+            if(gameStack.length > 0 && gameStack[idx]){
+                let id = gameStack[idx].playerId;
+                let mover = gameData.opponent_id == id ? game.mover[1] : game.mover[0];
 
-                var pl = opponent.id == id ? opponent : game.player;
-                pl.character.applyCard(gameData.gameStack[idx].direction, gameData.gameStack[idx].distance)
+                mover.applyCard(gameStack[idx].direction, gameStack[idx].distance);
 
-                game.currentCard = gameData.gameStack[idx];
+                game.currentCard = gameStack[idx];
                 
             }
 
-            if (!game.player.charIsMoving && !opponent.charIsMoving && gameData.gameStack.length+1 == idx) {
+            if (!game.mover[0].isMoving && !game.mover[1].isMoving && gameStack.length+1 == idx) {
 
                 game.isAnim = false;
                 gameData.gameStack = [];
+                gameStack = [];
                 clearInterval(interval);
                 idx=0;
             }

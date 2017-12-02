@@ -5,12 +5,12 @@ class Main {
         this.key = null;
         this.lastUpdateTime = 0;
         this.acDelta = 0;
-        this.roundNb = gameData.maxRound - gameData.roundsLeft;
+       // this.roundNb = gameData.maxRound - gameData.roundsLeft;
         this.maxRound = gameData.maxRound;
         this.isAnim = false;
         this.over = false;
         this.board = new Board(10, 10, 0, 0);
-
+        this.currentCard = null;
         this.mover = [new Mover(gameData.owner_id, 9, 9, "blue"),
             new Mover(gameData.opponent_id, 0, 0, "red")
         ];
@@ -190,20 +190,18 @@ class Main {
         for (let i = 0; i < 4 * ACard.w; i += ACard.w + 5) {
             let idx = Math.floor(i / ACard.w);
             let xpos = x + ACard.w * idx + idx * 5;
+            let difRound = gameData.maxRound - gameData.roundsLeft;
+            if (isHost && difRound > 0) {
 
-            if (isHost && this.roundNb > 1) {
-
-                gameStack[(this.roundNb - 2) * 4 + idx].drawAt(xpos, y);
+                gameStack[(difRound - 1) * 4 + idx].drawAt(xpos, y);
                 CTX.fillStyle = "rgba(255,255,255, 0.75)";
                 CTX.fillRect(xpos, y, ACard.w, ACard.h);
             }
             else if (!isHost && gameStack.length > 0 && idx < 2) {
-
-                let cd = gameStack[(this.roundNb - 1) * 4 + idx];
-                debugger;
+                let cd = gameStack[(difRound) * 4 + idx];
                 if(cd)
                     cd.drawAt(xpos, y);
-                CTX.fillStyle = "rgba(255,255,255, 0.75)";
+                CTX.fillStyle = "rgba(255,255,255, 0.5)";
                 CTX.fillRect(xpos, y, ACard.w, ACard.h);
             }
 
@@ -242,9 +240,6 @@ class Main {
                 for (let i = 0; i < 2; i++)
                     gameData.gameStack.push({playerId: user_id, dir: cards[i].direction, dist: cards[i].distance});
 
-                if (!this.player.isHost) {
-                    gameData.roundsLeft--;
-                }
                 this.updateData((res) => {
                     if (res.ok) this.startWaiting()
                 });
@@ -253,7 +248,7 @@ class Main {
     }
 
 
-    static drawCurrentCard(card) {
+    drawCurrentCard(card) {
         let x = PADDING;
         let y = HEIGHT / 2;
 
@@ -326,7 +321,9 @@ class Main {
                             let data = JSON.parse(res.gameData);
                             clearInterval(interval);
                             gameData = data;
-                            this.roundNb = gameData.maxRound - data.roundsLeft;
+                            this.mover[0].playerId = res.owner_id;
+                            this.mover[1].playerId = res.opponent_id;
+                            //this.roundNb = gameData.maxRound - data.roundsLeft;
 
                             for (let i = 0; i < data.gameStack.length; i++) {
                                 let card = data.gameStack[i];

@@ -100,7 +100,7 @@ class GamePlayingPage extends React.Component {
 
                         for (let i = 0; i < gameD.gameStack.length; i++) {
                             let card = gameD.gameStack[i];
-                            gameStack[i] = CardManager.getSpecific(card.playerId, card.dir, card.dist);
+                            gameStack[i] = CardManager.getSpecific(card.playerId, card.dist, card.dir);
                         }
 
 
