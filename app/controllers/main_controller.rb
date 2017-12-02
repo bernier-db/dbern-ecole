@@ -3,7 +3,7 @@ class MainController < ApplicationController
   before_action :getUserInfo_params, only: [:getUserInfo]
 
   def index
-  render 'home/index.html.erb'
+    render 'home/index.html.erb'
   end
 
   def getData
@@ -23,10 +23,13 @@ class MainController < ApplicationController
   end
 
   def hasGames
-    user_id = current_user.id
-
-    game = Participant.isPlaying(user_id, nil)
-    render :json =>{ok: true, game: game}
+    if (user_signed_in?)
+      user_id = current_user.id
+      game = Participant.isPlaying(user_id, nil)
+      render :json => {ok: true, game: game}
+      return
+    end
+    render :json =>{ok: true, game: nil}
   end
 
 
@@ -36,12 +39,12 @@ class MainController < ApplicationController
 
     user = User.find(user_id)
     if user === nil
-      render :json => {ok:false, msg:'User not found'}
+      render :json => {ok: false, msg: 'User not found'}
       return
     end
     stats = Participant.getStats(user)
 
-    render :json => {ok:true, user:user, stats: stats}
+    render :json => {ok: true, user: user, stats: stats}
   end
 
 

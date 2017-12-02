@@ -45,6 +45,7 @@ class ProfilePage extends React.Component {
     componentWillMount() {
         if (this.props.checkIfHasGame())
             return;
+
         $.ajax({
             method: "GET",
             url: '/stats/getMyStats',

@@ -20,7 +20,7 @@ class HomePage extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         if (this.props.checkIfHasGame())
             return;
         fetch('/getData').then((res) => {

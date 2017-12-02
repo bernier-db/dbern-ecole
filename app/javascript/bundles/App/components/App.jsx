@@ -50,6 +50,7 @@ class App extends React.Component {
     }
 
     hasGame(callback) {
+
         $.ajax({
             method: "GET",
             url: "/hasGame",
@@ -132,7 +133,7 @@ class App extends React.Component {
                                         user: this.state.user,
                                         router: this.props.router,
                                         checkIfHasGame: this.checkIfHasGame,
-                                        forfeited: this.resetHasGAme,
+                                        forfeited: this.resetHasGame,
                                     })
                             }
                         </div> : 'loading...'}

@@ -51,5 +51,8 @@ Rails.application.routes.draw do
   post '/games/win/:joust_id', to: 'game#win'
   post '/games/forfeit/:joust_id', to: 'game#forfeit'
 
+  post '/games/updateGameData', to: 'game#UpdateGameData'
+  get '/games/isItMyTurn/:joustId', to: 'game#isItMyTurn'
+
 
 end

@@ -5,17 +5,17 @@ var TextureManager = (function() {
 
     function createInstance() {
         var cardTexture = new Image();
-        cardTexture.src = "images/cards.png";
+        cardTexture.src = "/assets/memoDeck/cards.png";
         var tileset = new Image();
-        tileset.src = "images/tiles.png";
+        tileset.src = "/assets/memoDeck/tiles.png";
         var coinTexture = new Image();
-        coinTexture.src = "images/coin_sprite.png";
+        coinTexture.src = "/assets/memoDeck/coin_sprite.png";
 
         instance = {
             cards: cardTexture,
             coin: coinTexture,
             tiles: tileset
-        }
+        };
         return instance;
     }
 

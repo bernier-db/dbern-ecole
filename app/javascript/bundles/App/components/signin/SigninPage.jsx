@@ -24,6 +24,21 @@ class SigninPage extends React.Component {
         this.displayError = this.displayError.bind(this);
     }
 
+    componentWillMount() {
+        if (this.props.isLogged)
+            this.props.redirect('/home');
+    }
+
+    componentWillUpdate() {
+        if (this.props.isLogged) {
+            if (this.props.checkIfHasGame())
+                return;
+            else
+                this.props.redirect('/home');
+        }
+    }
+
+
     login(e) {
         e.preventDefault();
         this.setState({submitted: true});
@@ -50,18 +65,13 @@ class SigninPage extends React.Component {
                 }
                 else {
                     this.props.setSigned_in({
-                            isLogged: true,
-                            user: {
-                                prenom: res.user.prenom,
-                                nom: res.user.nom,
-                                email: res.user.email
-                            }
-                        }, () => {
-                            if (!this.props.checkIfHasGame()) {
-                                this.props.redirect('/home');
-                            }
+                        isLogged: true,
+                        user: {
+                            prenom: res.user.prenom,
+                            nom: res.user.nom,
+                            email: res.user.email
                         }
-                    );
+                    }, this.props.redirect("/home"));
                 }
             });
     }
@@ -169,8 +179,7 @@ class SigninPage extends React.Component {
     }
 
     render() {
-        if (this.props.isLogged)
-            this.props.redirect('/');
+
 
         return (
             <div className="loginPage">

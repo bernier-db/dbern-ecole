@@ -18,7 +18,7 @@ class Main {
 
 
 
-        this.player = new Player(1, "Name", true, this.mover[0], this);
+        this.player = new Player(1, "Name", isHost, isHost ? this.mover[0] : this.mover[1], this);
 
         this.coins = [];
 
@@ -203,9 +203,10 @@ class Main {
     }
 
 
-    canvaClick(event) {
-        var x = event.pageX - canvas.offsetLeft,
-            y = event.pageY - canvas.offsetTop;
+    canvaClick(evt) {
+        var rect = canvas.getBoundingClientRect();
+
+      var  x= evt.clientX - rect.left, y= evt.clientY - rect.top;
 
         if (this.player.isPlaying && !this.over && !this.isAnim) {
             //Verif si selection de carte
@@ -218,6 +219,40 @@ class Main {
                 if (!this.player.isHost) {
                     gameData.roundsLeft--;
                 }
+                $.ajax({
+                    method: "post",
+                    url: '/games/updateGameData/',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', auth)
+                    },
+                    data:{
+                        joustId: joustId,
+                        gameData: JSON.stringify(gameData),
+                    },
+                    success: (res) => {
+                        if (res.ok) {
+                            interval = setInterval(function(){
+                                $.ajax({
+                                    method: "get",
+                                    url: "/games/isItMyTurn",
+                                    params: {joustId: joustId},
+                                    success: function(res){
+                                        console.log("checking...", res);
+                                        if(res.ok){
+                                            if(res.myTurn){
+
+                                            }
+                                        }
+                                    }
+
+                                })
+                            });
+                        }
+                        else {
+                            alert("Erreur!!!!!!!!!");
+                        }
+                    }
+                });
             }
         }
     }

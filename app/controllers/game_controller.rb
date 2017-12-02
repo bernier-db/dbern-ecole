@@ -36,7 +36,7 @@ class GameController < ApplicationController
       else
         other = nil
       end
-      render :json => {ok: true, state: "already playing", data: playing, opponent: other}
+      render :json => {ok: true, state: "already playing", data: playing, opponent: other, myId: current_user.id}
       return
     end
 
@@ -53,14 +53,14 @@ class GameController < ApplicationController
       game.save
 
       owner = User.find(game.owner_id)
-      render :json => {ok: true, state: 'joining', data: openedGames[0], opponent: owner}
+      render :json => {ok: true, state: 'joining', data: openedGames[0], opponent: owner, myId: current_user.id}
       return
 #host
     else
       joust = Participant.new({status: 'waiting', owner_id: user_id, game_id: game_id, game_data: {}})
       if joust.save!
 
-        render :json => {ok: true, state: 'hosting', data: joust}
+        render :json => {ok: true, state: 'hosting', data: joust, myId: current_user.id}
         return
       end
       render :json => {ok: false}
@@ -108,6 +108,44 @@ class GameController < ApplicationController
     render :json => {ok: true, state: 'forfeited', data: joust}
   end
 
+  def UpdateGameData
+    data = params[:gameData]
+    id = params[:joustId]
+    user_id = current_user.id
+
+    participant = Participant.find(id)
+
+    if(participant.status == 'ended')
+      return render :json => {ok: false, state:'ended'}
+    end
+
+    if participant.owner_id != user_id && participant.opponent_id != user_id
+      return render :json => {ok: false, status: "user_id:#{user_id} not in game"}
+    end
+
+    participant.game_data = data.to_s
+    participant.save
+
+    return render :json => {ok: true}
+
+  end
+
+  def isItMyTurn
+    user_id = current_user.id
+    id = params[:joustId]
+    participant = Participant.find(id)
+
+    if participant != nil
+      if participant.waiting_for_user_id == user_id
+        return render :json =>{ok: true, myTurn: false, gameData: participant.game_data}
+      else
+        return render :json => {ok: true, myTurn: false}
+      end
+
+    end
+  end
+
+
 
   private
 
@@ -120,4 +158,5 @@ class GameController < ApplicationController
     params.require(:joust_id)
     params.permit(:joust_id)
   end
+
 end

@@ -13,6 +13,7 @@ class GamesPage extends React.Component {
     componentWillMount() {
         if (this.props.checkIfHasGame())
             return;
+
         $.ajax({
             method: "get",
             url: "/games/getAllGames",
@@ -41,8 +42,6 @@ class GamesPage extends React.Component {
                 arr[arr.length - 1].games.push(game);
             }
         });
-        console.log(arr);
-
 
         return (<div className={"flex wrap"}>
             {arr.map((section, idx1) => {

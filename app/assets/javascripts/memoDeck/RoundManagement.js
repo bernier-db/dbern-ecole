@@ -1,7 +1,7 @@
-var game = new Main();
-game.start();
+// var game = new Main();
+// game.start();
 /************************Temporaire pour avant intégration ****************************************************/
-var opponent = new Player(2, "op", false, game.mover[1], game);
+//var opponent = new Player(2, "op", false, game.mover[1], game);
 
 function newRound(e) {
 

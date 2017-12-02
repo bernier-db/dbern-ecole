@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create(title: :MemoDeck, description: "A game where you have to remember every moves you and tour opponent made before seeing it happen!", image: "memoDec", );
+Game.create(title: :MemoDeck, description: "A game where you have to remember every moves you and tour opponent made before seeing it happen!", image: "default.jpg", );
 Game.create(title: :TicTacToe, description: "An unbeatable classic game. Strategy at its best!", image: "tictactoe.png");
 Game.create(title: :Games3, description: "bla blablablablabalbalbalbalablablablabla", image: "default.jpg");
+Game.create(title: :Battleships, description: "bla blablablablabalbalbalbalablablablabla", image: "battleships.jpg");
+Game.create(title: :Carcassonne, description: "bla blablablablabalbalbalbalablablablabla", image: "carcassonne.jpg");
+Game.create(title: 'Settlers of Catan', description: "bla blablablablabalbalbalbalablablablabla", image: "default.jpg");
+Game.create(title: :Clue, description: "bla blablablablabalbalbalbalablablablabla", image: "clue.jpg");
 
 
 User.create! :nom => 'Bernier', :prenom => 'Dave', :email => 'dave.bernier@dbern.net', :password => '123456', :password_confirmation => '123456'
@@ -29,4 +33,4 @@ Relationship.create(user_id: 1, friend_id: 4, status: :accepted)
 Participant.create! :opponent_id => 1, :owner_id => 2, :game_id=>2, :winner_id => 1, :status => 'ended', :game_data => '{}', :waiting_for_user_id => 1
 Participant.create(opponent_id: 3, owner_id: 2, game_id:2, winner_id: 2, status: 'ended', game_data: '{}', waiting_for_user_id: 1)
 Participant.create(opponent_id: 1, owner_id: 2, game_id:1, winner_id: 1, status: 'ended', game_data: '{}', waiting_for_user_id: 1)
-Participant.create(opponent_id: 1, owner_id: 2, game_id:1, winner_id: 2, status: 'ended', game_data: '{}', waiting_for_user_id: 1)
+Participant.create(opponent_id: 1, owner_id: 2, game_id:1, winner_id: nil, status: 'playing', game_data: '{}', waiting_for_user_id:nil)

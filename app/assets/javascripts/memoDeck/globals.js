@@ -1,8 +1,12 @@
-const canvas = document.getElementById("game");
-const CTX = canvas.getContext("2d");
-
-const HEIGHT = canvas.height;
-const WIDTH = canvas.width;
+var canvas;// = document.getElementById("game");
+var CTX;// = canvas.getContext("2d");
+var interval;
+var joustId;
+var HEIGHT;// = canvas.height;
+var WIDTH;// = canvas.width;
+var game;
+var isHost;
+var user_id
 const BOARD_W = 10;
 const BOARD_H =10;
 const TILE_H = 48;
@@ -14,8 +18,8 @@ const PADDING = 20;
 const CURRENTROUND_PADDING = 80;
 
 var gameData = {
-    owner_id:1,
-    opponent_id: 2,
+    owner_id:0,
+    opponent_id: 0,
     gameStack: new Array(0),
     winner_id: 0,    
     owner_points: 0,

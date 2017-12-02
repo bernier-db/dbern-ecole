@@ -29,8 +29,10 @@ class FriendsPage extends React.Component {
         if (!this.props.isLogged) {
             this.props.redirect('/sign_in');
         } else
-        if (this.props.checkIfHasGame())
+        if (this.props.checkIfHasGame()){
             return;
+        }
+        else
         //Fetch actual friends
             $.ajax({
                 method: "GET",
