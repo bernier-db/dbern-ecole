@@ -8,7 +8,7 @@ class Player {
         this.game = game;
         this.cards = [];
         this.selectedCards = [];
-        this.isPlaying = isHost ? true : false;
+        this.isPlaying = false;
         this.id = id;
         this.pickCards();
 

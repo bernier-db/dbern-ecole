@@ -57,7 +57,8 @@ class GameController < ApplicationController
       return
 #host
     else
-      joust = Participant.new({status: 'waiting', owner_id: user_id, game_id: game_id, game_data: {}})
+
+      joust = Participant.new({status: 'waiting', owner_id: user_id, game_id: game_id, game_data: {}, waiting_for_user_id: 0})
       if joust.save!
 
         render :json => {ok: true, state: 'hosting', data: joust, myId: current_user.id}
@@ -124,10 +125,11 @@ class GameController < ApplicationController
     end
 
     participant.game_data = data.to_s
+    participant.waiting_for_user_id = participant.waiting_for_user_id == participant.owner_id ?
+                                          participant.opponent_id : participant.owner_id
     participant.save
 
     return render :json => {ok: true}
-
   end
 
   def isItMyTurn
@@ -135,9 +137,9 @@ class GameController < ApplicationController
     id = params[:joustId]
     participant = Participant.find(id)
 
-    if participant != nil
+    if participant != nil && participant.status != 'ended'
       if participant.waiting_for_user_id == user_id
-        return render :json =>{ok: true, myTurn: false, gameData: participant.game_data}
+        return render :json =>{ok: true, myTurn: true, gameData: participant.game_data}
       else
         return render :json => {ok: true, myTurn: false}
       end

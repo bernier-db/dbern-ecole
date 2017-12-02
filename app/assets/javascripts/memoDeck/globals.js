@@ -17,6 +17,8 @@ const Y_OFFSET = 50;
 const PADDING = 20;
 const CURRENTROUND_PADDING = 80;
 
+var gameStack = [];
+var userPlayingOnLoad;
 var gameData = {
     owner_id:0,
     opponent_id: 0,
