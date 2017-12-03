@@ -5,12 +5,13 @@ class Main {
         this.key = null;
         this.lastUpdateTime = 0;
         this.acDelta = 0;
-       // this.roundNb = gameData.maxRound - gameData.roundsLeft;
+        // this.roundNb = gameData.maxRound - gameData.roundsLeft;
         this.maxRound = gameData.maxRound;
         this.isAnim = false;
         this.over = false;
         this.board = new Board(10, 10, 0, 0);
         this.currentCard = null;
+
         this.mover = [new Mover(gameData.owner_id, 9, 9, "blue"),
             new Mover(gameData.opponent_id, 0, 0, "red")
         ];
@@ -23,11 +24,11 @@ class Main {
 
         this.coins = [];
         let length = gameData.coins.length > 0 ? gameData.coins.length : 10;
-        let initiating = (!gameData.coins || gameData.coins.length === 0 && gameData.roundsLeft === gameData.maxRound);
+        this.initiating = (isHost && !gameData.coins || gameData.coins.length === 0 && gameData.roundsLeft === gameData.maxRound);
         for (let i = 0; i < length; i++) {
             let cX,
                 cY;
-            if (initiating) {
+            if (this.initiating) {
                 if (this.player.isHost) {
                     //find available place
                     do {
@@ -46,7 +47,7 @@ class Main {
             }
             this.coins.push(new Coin(gameData.coins[i].x, gameData.coins[i].y, textures.coin));
         }
-        if (initiating) {
+        if (this.initiating) {
             this.updateData((res) => {
                 console.log(res);
             });
@@ -58,7 +59,7 @@ class Main {
     }
 
     start() {
-        if(gameData.coins != undefined)
+        if (gameData.coins != undefined && !this.over)
             requestAnimFrame(this.start.bind(this));
         this.input();
 
@@ -100,9 +101,13 @@ class Main {
                     playRound();
                 }
             }
-            else if (gameData.gameStack.length === 0 && dif !== 0) {
+            else if (gameData.gameStack.length === 0) {
                 this.over = true;
-                gameData.winner_id = dif > 0 ? gameData.owner_id : gameData.opponent_points;
+
+                if (dif >= 0)
+                    gameData.winner_id = gameData.owner_id;
+                else if (dif < 0)
+                    gameData.winner_id = gameData.opponent_id;
             }
         }
     }
@@ -133,6 +138,32 @@ class Main {
             this.drawCurrentCard(this.currentCard);
         }
         if (this.over) {
+            clearInterval(interval);
+            $(".forfeit").prop("disabled", true);
+            //call ajax
+            if (gameData.winner_id === user_id) {
+                $.ajax({
+                    method: "post",
+                    url: "/games/win/" + joustId,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('X-CSRF-Token', auth)
+                    },
+                    data: {
+                        gameData: JSON.stringify(gameData)
+                    },
+                    success: (res) => {
+                        if (res.ok) {
+                            reset();
+                            setTimeout(() => {
+                                window.location.href = "/games/infos/" + res.data.game_id
+                            }, 3000);
+                        }
+                    }
+                });
+            }
+            else {
+                setTimeout(()=>{window.location.href = "/home"},3000)
+            }
             this.drawEnd();
         }
     }
@@ -191,7 +222,7 @@ class Main {
             let idx = Math.floor(i / ACard.w);
             let xpos = x + ACard.w * idx + idx * 5;
             let difRound = gameData.maxRound - gameData.roundsLeft;
-            if (isHost && difRound > 0) {
+            if (isHost && difRound > 0 && difRound < gameData.maxRound) {
 
                 gameStack[(difRound - 1) * 4 + idx].drawAt(xpos, y);
                 CTX.fillStyle = "rgba(255,255,255, 0.75)";
@@ -199,7 +230,7 @@ class Main {
             }
             else if (!isHost && gameStack.length > 0 && idx < 2) {
                 let cd = gameStack[(difRound) * 4 + idx];
-                if(cd)
+                if (cd)
                     cd.drawAt(xpos, y);
                 CTX.fillStyle = "rgba(255,255,255, 0.5)";
                 CTX.fillRect(xpos, y, ACard.w, ACard.h);
@@ -224,8 +255,10 @@ class Main {
 
 
     canvaClick(evt) {
-        let rect = canvas.getBoundingClientRect();
+        if (gameData.roundsLeft <= 0)
+            return;
 
+        let rect = canvas.getBoundingClientRect();
         let x = evt.clientX - rect.left, y = evt.clientY - rect.top;
 
         if (this.player.isPlaying && !this.over && !this.isAnim) {
@@ -292,8 +325,8 @@ class Main {
 
 
     updateData(callback) {
-        if(!isHost)
-            gameData.roundsLeft-=1;
+        if (!isHost)
+            gameData.roundsLeft -= 1;
         $.ajax({
             method: "post",
             url: '/games/updateGameData/',
@@ -303,8 +336,11 @@ class Main {
             data: {
                 joustId: joustId,
                 gameData: JSON.stringify(gameData),
+                isInitializing: this.initiating,
             },
-            success: callback
+            success: (res) => {
+                callback(res);
+            }
         });
     }
 
@@ -317,13 +353,19 @@ class Main {
                     console.log("checking...");
                     if (res.ok) {
                         if (res.myTurn) { //C'EST MON TOUR!!!!
+                            if(this.initiating) {
+                                this.initiating = false;
+                                let op_name = res.opponent_name;
+                                $("#opponent_name").html('Playing with <a href="/users/'+res.opponent_id+'">'+op_name+'</a>')
+                            }
                             console.log("YEAH!");
                             let data = JSON.parse(res.gameData);
                             clearInterval(interval);
                             gameData = data;
-                            this.mover[0].playerId = res.owner_id;
+                            this.mover[0].playerId = data.owner_id;
                             this.mover[1].playerId = res.opponent_id;
-                            //this.roundNb = gameData.maxRound - data.roundsLeft;
+
+                            gameData.opponent_id = res.opponent_id;
 
                             for (let i = 0; i < data.gameStack.length; i++) {
                                 let card = data.gameStack[i];
@@ -331,7 +373,6 @@ class Main {
                             }
                             this.player.startRound();
                         }
-                        console.log("no...");
                     }
                 }.bind(this)
             })

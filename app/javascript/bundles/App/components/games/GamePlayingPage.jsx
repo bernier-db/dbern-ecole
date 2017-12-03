@@ -88,8 +88,8 @@ class GamePlayingPage extends React.Component {
                     userPlayingOnLoad = res.data.waiting_for_user_id;
                     joustId = res.data.id;
                     gameData = gameD.coins == undefined ? gameData : gameD;
-                    gameData.opponent_id = user_id;
-                    gameData.owner_id = res.owner_id;
+                    gameData.opponent_id = res.data.opponent_id;
+                    gameData.owner_id = res.data.owner_id;
                     game = new Main();
                     game.start();
 
@@ -122,6 +122,7 @@ class GamePlayingPage extends React.Component {
                 if (res.ok) {
                     gameData = {};
                     if (!this.props.checkIfHasGame()) {
+                        reset();
                         this.props.redirect("/games/infos/  " + this.state.gameData.game_id);
                     }
                 }
@@ -140,7 +141,7 @@ class GamePlayingPage extends React.Component {
 
                         <div>
                             {this.state.opponent == undefined ?
-                                (<span>Waiting for an opponent</span>) :
+                                (<span id="opponent_name">Waiting for an opponent</span>) :
                                 (<span>
                             Playing with:
                             <Link className="link"
@@ -151,7 +152,6 @@ class GamePlayingPage extends React.Component {
                                 )}
                             <button className={"forfeit clickable"} onClick={this.forfeit}>Forfeit</button>
                         </div>
-
                     </div>
                 </div>
             </div>

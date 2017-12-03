@@ -25,7 +25,6 @@ class GameController < ApplicationController
 ########### join or host###########
 #POST /games/play/start:id
   def play
-
     game_id = params[:id]
     user_id = current_user.id
 #already playing
@@ -45,7 +44,6 @@ class GameController < ApplicationController
     if openedGames.count > 0
       game = openedGames[0]
 
-
       game.opponent_id = user_id
       game.status = 'playing'
       game.waiting_for_user_id = game.owner_id
@@ -53,7 +51,7 @@ class GameController < ApplicationController
       game.save
 
       owner = User.find(game.owner_id)
-      render :json => {ok: true, state: 'joining', data: openedGames[0], opponent: owner, myId: current_user.id}
+      render :json => {ok: true, state: 'joining', data: game, opponent: owner, myId: current_user.id}
       return
 #host
     else
@@ -69,24 +67,26 @@ class GameController < ApplicationController
   end
 
 
-#POST /game/:joust_id/win
+#POST /game/win/:joustId
   def win
     joust_id = params[:joust_id]
+    game_data = params[:gameData]
     user_id = current_user.id
 
-    joust = Participant.find(joust_id);
-
-    if (joust.owner_id != user_id && joust.opponent_id != user_id)
+    joust = Participant.find(joust_id)
+    if joust.owner_id != user_id && joust.opponent_id != user_id
       return head :unauthorized
 
     end
 
     joust.winner_id = user_id
     joust.status = 'ended'
-    joust.save!
-
-    render :json => {state: 'won', data: joust}
-    return
+    joust.game_data = game_data
+    if joust.save!
+      render :json => {ok: true, state: 'won', data: joust}
+    else
+      render :json => {ok:false}
+    end
   end
 
 #POST /games/forfeit/:joust_id
@@ -96,7 +96,7 @@ class GameController < ApplicationController
 
     joust = Participant.find(joust_id);
 
-    if (joust.owner_id != user_id && joust.opponent_id != user_id)
+    if joust.owner_id != user_id && joust.opponent_id != user_id
       return head :unauthorized
     end
 
@@ -110,7 +110,9 @@ class GameController < ApplicationController
   end
 
   def UpdateGameData
+
     data = params[:gameData]
+    isInit = params[:isInitializing]
     id = params[:joustId]
     user_id = current_user.id
 
@@ -123,10 +125,13 @@ class GameController < ApplicationController
     if participant.owner_id != user_id && participant.opponent_id != user_id
       return render :json => {ok: false, status: "user_id:#{user_id} not in game"}
     end
-
     participant.game_data = data.to_s
-    participant.waiting_for_user_id = participant.waiting_for_user_id == participant.owner_id ?
-                                          participant.opponent_id : participant.owner_id
+
+    if(isInit != 'true')
+      participant.waiting_for_user_id = participant.waiting_for_user_id == participant.owner_id ?
+                                            participant.opponent_id : participant.owner_id
+    end
+
     participant.save
 
     return render :json => {ok: true}
@@ -136,10 +141,15 @@ class GameController < ApplicationController
     user_id = current_user.id
     id = params[:joustId]
     participant = Participant.find(id)
+    op_name = ''
 
+    if(participant.opponent_id != nil)
+     op = User.find(participant.opponent_id)
+      op_name = op.prenom + ' ' + op.nom
+    end
     if participant != nil && participant.status != 'ended'
       if participant.waiting_for_user_id == user_id
-        return render :json =>{ok: true, myTurn: true, gameData: participant.game_data}
+        return render :json =>{ok: true, myTurn: true, gameData: participant.game_data, opponent_id: participant.opponent_id, opponent_name: op_name }
       else
         return render :json => {ok: true, myTurn: false}
       end

@@ -29,7 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     password = true;
     message = "Info"
     @user = User.find(current_user.id)
-    byebug
     # required for settings form to submit when password is left blank
     if account_update_params[:password].blank?
       password = false;

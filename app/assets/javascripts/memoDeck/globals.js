@@ -1,12 +1,9 @@
 var canvas;// = document.getElementById("game");
 var CTX;// = canvas.getContext("2d");
-var interval;
-var joustId;
+
 var HEIGHT;// = canvas.height;
 var WIDTH;// = canvas.width;
-var game;
-var isHost;
-var user_id
+
 const BOARD_W = 10;
 const BOARD_H =10;
 const TILE_H = 48;
@@ -17,6 +14,11 @@ const Y_OFFSET = 50;
 const PADDING = 20;
 const CURRENTROUND_PADDING = 80;
 
+var interval;
+var joustId;
+var game;
+var isHost;
+var user_id;
 var gameStack = [];
 var userPlayingOnLoad;
 var gameData = {
@@ -66,6 +68,27 @@ window.requestAnimFrame = (function(){
 		})();
 function map(value, start1, stop1, start2, stop2) {
     return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+}
+
+function reset(){
+     interval = undefined;
+     joustId = undefined;
+     game = undefined;
+     isHost = undefined;
+     user_id = undefined;
+     gameStack = [];
+     userPlayingOnLoad = undefined;
+     gameData = {
+        owner_id:0,
+        opponent_id: 0,
+        gameStack: new Array(0),
+        winner_id: 0,
+        owner_points: 0,
+        opponent_points: 0,
+        maxRound: 3,
+        roundsLeft: 3,
+        coins: []
+    };
 }
 
 
