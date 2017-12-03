@@ -33,4 +33,4 @@ Relationship.create(user_id: 1, friend_id: 4, status: :accepted)
 Participant.create! :opponent_id => 1, :owner_id => 2, :game_id=>2, :winner_id => 1, :status => 'ended', :game_data => '{}', :waiting_for_user_id => 1
 Participant.create(opponent_id: 3, owner_id: 2, game_id:2, winner_id: 2, status: 'ended', game_data: '{}', waiting_for_user_id: 1)
 Participant.create(opponent_id: 1, owner_id: 2, game_id:1, winner_id: 1, status: 'ended', game_data: '{}', waiting_for_user_id: 1)
-Participant.create(opponent_id: 1, owner_id: 2, game_id:1, winner_id: nil, status: 'playing', game_data: '{}', waiting_for_user_id:nil)
+
